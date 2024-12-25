@@ -24,6 +24,9 @@ export const Content = () => {
                         Developer
                     </h1>
                     <Lottie loop={true} animationData={animationData}/>
+                    <div className={"m2"}>
+                        <Lottie loop={true} animationData={animationData}/>
+                    </div>
                 </div>
                 <Card></Card>
                 <Card></Card>
