@@ -1,14 +1,17 @@
-export const Card = ({children}) => {
+import "./Card.css"
+
+export const Card = ({children, height = 200, width = "70.5%"}) => {
     return (
         <>
-            <div style={{
-                backgroundColor: "black",
-                borderRadius: "15px",
-                padding: "25px",
-                margin: "25px",
-                minHeight: "200px",
+            <div
+                className="card-container"
+                style={{
+                height: height + "px",
+                width: width
             }}>
-                {children}
+                <div className="container">
+                    {children}
+                </div>
             </div>
         </>
     )
