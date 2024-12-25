@@ -1,0 +1,58 @@
+.card-sliding {
+    background-color: black;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 0.75em;
+    cursor: pointer;
+    transition: ease 0.2s;
+    border: 2px solid #1a1a1a;
+    width: 70.5%;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-box-shadow: -10px 0px 13px -7px #0000003a,
+    10px 0px 13px -7px #0000003a, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: -10px 0px 33px -7px #0000003a, 10px 0px 33px -7px #0000003a,
+    5px 5px 35px 5px rgba(0, 0, 0, 0);
+    &:hover {
+        background-color: #1a1a1a;
+        border: 2px solid #1677ff;
+    }
+}
+
+
+
+.button-sliding {
+    font-size: 100px;
+    margin: 0 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button-sliding:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease;
+
+}
+
+.button-sliding img{
+    height: 100px;
+}
+
+.emojis {
+    display: inline-block;
+    animation: 30s sliding infinite linear;
+}
+
+.card-sliding:hover .emojis{
+    animation-play-state: paused;
+}
+
+@keyframes sliding {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
