@@ -1,4 +1,4 @@
 .navbar{
-    background: #1D1D1F;
-    background: radial-gradient(circle, #1D1D1F 0%, rgba(0,0,0,1) 100%);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
 }
