@@ -13,11 +13,12 @@ export const Content = () => {
                 display: "flex",
                 flexDirection: "column",
                 width: "100%",
+                maxWidth: "1000px",
                 alignItems: "center",
                 gap: "1.5rem"
             }}>
-                <div style={{height: "100vh",margin: "35px",display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
-                    <div style={{textAlign: "start"}}>
+                <section style={{height: "100vh", marginTop: "10rem", display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
+                    <div style={{textAlign: "start", width: "50%"}}>
                         <h1>Hello!<br/>I'm a
                             <div className={"wrapper"}>
                                 <span> Mobile </span>
@@ -32,14 +33,21 @@ export const Content = () => {
                     <div className={"m2"}>
                         <Lottie loop={true} animationData={animationData}/>
                     </div>
-                </div>
-                <div style={{display: "flex"}}>
-                    <Card ></Card>
-                    <Card ></Card>
-                </div>
-                <Sliding/>
-                <Card height={500}></Card>
-                <Card height={100}></Card>
+                </section>
+                <section style={{height: "100vh", width: "100%", gap: "1.5rem"}}>
+                    <div style={{"display": "flex", gap: "inherit"}}>
+                        <Card/>
+                        <Card/>
+                    </div>
+                    <Sliding/>
+                </section>
+                <section style={{margin: "25px 0", width: "100%"}}>
+                    <div style={{display: "flex", flexDirection: "column", width: "100%"}}>
+                        <Card height={500}></Card>
+                        <div></div>
+                        <Card height={100}></Card>
+                    </div>
+                </section>
             </div>
         </>
     )

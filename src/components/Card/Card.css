@@ -1,7 +1,6 @@
 .card-container{
     background-color: black;
-    padding: 25px;
-    margin: 25px;
+    margin: 25px 0 ;
     width: fit-content;
     border-radius: 0.75em;
     cursor: pointer;

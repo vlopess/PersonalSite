@@ -1,6 +1,6 @@
 import "./Card.css"
 
-export const Card = ({children, height = 200, width = "70.5%"}) => {
+export const Card = ({children, height = 250, width = "100%"}) => {
     return (
         <>
             <div
