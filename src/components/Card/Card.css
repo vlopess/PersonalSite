@@ -10,6 +10,10 @@
     overflow: hidden auto;
 }
 
+.card-container p {
+    color: grey;
+}
+
 .card-container:hover {
     border: 2px solid #1677ff;
 }

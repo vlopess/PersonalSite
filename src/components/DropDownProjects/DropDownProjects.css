@@ -40,7 +40,6 @@
     user-select: none;
     font-weight: 600;
     color: white;
-    width: 100%;
     display: flex;
     align-items: center;
     flex-flow: row;
@@ -51,6 +50,7 @@
     z-index: 99;
     border-radius: inherit;
     background-color: #1a1a1a;
+    text-align: initial;
 }
 .sr-only {
     position: absolute;
