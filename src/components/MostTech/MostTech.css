@@ -3,14 +3,14 @@
     max-width: 500px;
     width: 100%;
     background: transparent;
-    margin: 0 15px;
-    padding: 10px 20px;
+    padding: 20px 0;
     border-radius: 7px;
 }
 
 .container .skill-box {
-    width: 100%;
+    width: 75%;
     margin: 10px 0;
+    text-align: end;
 }
 
 .skill-box .title {
