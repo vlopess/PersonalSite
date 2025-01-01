@@ -46,11 +46,11 @@ export const NavBar = () => {
             <Navbar>
                 <div className="button-container">
                     <NavBarButton img={Home} title={"Home"} onTap={() => goToHome()}/>
-                    <NavBarButton img={Edit} title={"About Me"} onTap={() => goToAboutMe()}/>
-                    <NavBarButton  title={"Projects"} onTap={() => goToProjects()}>
+                    <NavBarButton img={Edit} title={"Sobre mim"} onTap={() => goToAboutMe()}/>
+                    <NavBarButton  title={"Projetos"} onTap={() => goToProjects()}>
                         <FolderSvg/>
                     </NavBarButton>
-                    <NavBarButton img={User} title={"Contact"} onTap={() => goToContact()}/>
+                    <NavBarButton img={User} title={"Contato"} onTap={() => goToContact()}/>
                     <NavBarDropDownButton/>
                 </div>
             </Navbar>
