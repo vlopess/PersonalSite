@@ -1,0 +1,14 @@
+a{
+    color: #1677ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover{
+    text-decoration: #1677ff;
+}
+
+.article-item {
+    padding: 10px 0;
+    display: flex;
+}
