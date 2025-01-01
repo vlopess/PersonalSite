@@ -1,0 +1,77 @@
+ul {
+    list-style: none;
+}
+
+.timeLine {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 0;
+}
+.timeLine .icon-content {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.timeLine .icon-content .card-timeLine {
+    color: #fff;
+    padding: 6px;
+    border-radius: 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 250px;
+}
+
+.timeLine .icon-content .tooltip-timeLine {
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    width: 50%;
+    margin: auto 0;
+}
+
+
+
+.timeLine .icon-content .card-timeLine {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    color: #4d4d4d;
+    background-color: #1D1D1F;
+    transition: all 0.3s ease-in-out;
+}
+
+.timeLine .icon-content .card-timeLine:hover {
+    box-shadow: 3px 2px 45px 0 rgb(0 0 0 / 50%);
+}
+.timeLine .icon-content .card-timeLine svg {
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+.timeLine .icon-content .card-timeLine:hover {
+    color: #1D1D1F;
+}
+
+.timeLine .icon-content .card-timeLine:hover .filled {
+    height: 100%;
+}
+
+.timeLine .icon-content div[data-social="college"] ~ .tooltip-timeLine {
+    background-color: #1db954;
+}
+
+.timeLine .icon-content div[data-social="work"] ~ .tooltip-timeLine {
+    background-color: grey;
+}
+
+.timeLine .icon-content div[data-social="certificate"] ~ .tooltip-timeLine {
+    background-color: #0088cc;
+}
