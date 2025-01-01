@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.divider span{
+    width: 25%;
+}
+
 .divider hr {
     height: 1px;
     background-color: #9f9f9f;
