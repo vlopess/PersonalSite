@@ -1,4 +1,5 @@
 import "./Button.css"
+import Translator from "../../i18n/Translator.js";
 
 export const ButtonGithub = ({url}) => {
     return (
@@ -16,7 +17,7 @@ export const ButtonGithub = ({url}) => {
                         fill="currentcolor"
                     ></path>
                 </svg>
-                <span>View on Github</span>
+                <span><Translator path="button.github"/></span>
             </a>
         </>
     )

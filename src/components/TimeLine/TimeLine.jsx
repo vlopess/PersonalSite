@@ -2,12 +2,13 @@ import "./TimeLine.css";
 import {TimeLineCollege} from "./TimeLineItens/TimeLineCollege/TimeLineCollege.jsx";
 import {TImeLineWork} from "./TimeLineItens/TImeLineWork/TImeLineWork.jsx";
 import {TimeLineCertificate} from "./TimeLineItens/TimeLineCertificate/TimeLineCertificate.jsx";
+import Translator from "../../i18n/Translator.js";
 
 export const TimeLine = () => {
     return (
         <>
             <div style={{width: "100%"}}>
-                <h2>Linha do Tempo</h2>
+                <h2><Translator path="aboutMe.timeLine.title"/></h2>
                 <ul className="timeLine">
                     <TimeLineCertificate data={"2024/12 -->"} text={"Introdução a Teste de Software (UFBA)"}/>
                     <TimeLineCertificate data={"2024/03 -->"} text={"The Complete Spring Boot Development Bootcamp (Udemy)"}/>

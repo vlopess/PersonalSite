@@ -6,6 +6,7 @@ import Home from "../../assets/svg/home.svg"
 import Edit from "../../assets/svg/edit.svg"
 import User from "../../assets/svg/user.svg"
 import {FolderSvg} from "../SvgComponents/FolderSvg.jsx";
+import Translator from "../../i18n/Translator.js";
 
 export const NavBar = () => {
 
@@ -45,12 +46,12 @@ export const NavBar = () => {
         <>
             <Navbar>
                 <div className="button-container">
-                    <NavBarButton img={Home} title={"Home"} onTap={() => goToHome()}/>
-                    <NavBarButton img={Edit} title={"Sobre mim"} onTap={() => goToAboutMe()}/>
-                    <NavBarButton  title={"Projetos"} onTap={() => goToProjects()}>
+                    <NavBarButton img={Home} title={<Translator path="navbar.home"/>} onTap={() => goToHome()}/>
+                    <NavBarButton img={Edit} title={<Translator path="navbar.aboutMe"/>} onTap={() => goToAboutMe()}/>
+                    <NavBarButton  title={<Translator path="navbar.projects"/>} onTap={() => goToProjects()}>
                         <FolderSvg/>
                     </NavBarButton>
-                    <NavBarButton img={User} title={"Contato"} onTap={() => goToContact()}/>
+                    <NavBarButton img={User} title={<Translator path="navbar.contact"/>} onTap={() => goToContact()}/>
                     <NavBarDropDownButton/>
                 </div>
             </Navbar>

@@ -1,6 +1,18 @@
 import "./NavBarDropDownButton.css";
+import {useTranslation} from "react-i18next";
+import Translator from "../../../i18n/Translator.js";
 
 export const NavBarDropDownButton = () => {
+    const { i18n } = useTranslation();
+
+    function handleChangeLanguage(language) {
+        i18n.changeLanguage(language).then(r => console.log(language));
+        const checkbox = document.querySelector("input[type=checkbox]");
+        checkbox.checked = false;
+    }
+
+    const selectedLanguage = i18n.language;
+
     return (
         <>
             <label className="popup">
@@ -41,13 +53,13 @@ export const NavBarDropDownButton = () => {
                                       d="M24.172,32h-4.36l-1.008,4H16l4.764-15h2.444L28,36h-2.805L24.172,32z M20.444,30h3.101 l-1.559-5.714L20.444,30z"/>
                             </g>
                         </svg>
-                        Idioma
+                        <Translator path="navbar.idioma"/>
                     </div>
                     <nav className="popup-window">
-                        <legend>Opções</legend>
+                        <legend><Translator path="navbar.burguer.descricao"/></legend>
                         <ul>
-                            <li>
-                                <button>
+                            <li className={selectedLanguage === "pt-BR" ? "selected" : ""}>
+                                <button onClick={()=> handleChangeLanguage("pt-BR")}>
                                     <svg width="24" height="24" viewBox="-2100 -1470 4200 2940"
                                          xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                                         <defs>
@@ -159,11 +171,11 @@ export const NavBarDropDownButton = () => {
                                         <use x="-295" y="390" xlinkHref="#a"/>
                                         <use y="575" xlinkHref="#i"/>
                                     </svg>
-                                    <span>Português</span>
+                                    <span><Translator path="navbar.burguer.pt"/></span>
                                 </button>
                             </li>
-                            <li>
-                                <button>
+                            <li className={selectedLanguage === "en-US" ? "selected" : ""}>
+                                <button onClick={()=> handleChangeLanguage("en-US")}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="24" height="24">
                                         <clipPath id="t">
                                             <path d="M25,15h25v15zv15h-25zh-25v-15zv-15h25z"/>
@@ -175,11 +187,11 @@ export const NavBarDropDownButton = () => {
                                         <path d="M-1 11h22v-12h8v12h22v8h-22v12h-8v-12h-22z" fill="#C8102E"
                                               stroke="#FFF" strokeWidth="2"/>
                                     </svg>
-                                    <span>Inglês</span>
+                                    <span><Translator path="navbar.burguer.en"/></span>
                                 </button>
                             </li>
-                            <li>
-                                <button style={{padding: "10px 15px"}}>
+                            <li className={selectedLanguage === "es" ? "selected" : ""}>
+                                <button style={{padding: "10px 15px"}} onClick={()=> handleChangeLanguage("es")}>
                                     <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
                                          text-rendering="geometricPrecision" image-rendering="optimizeQuality"
                                          fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 356.18"
@@ -1554,17 +1566,17 @@ export const NavBarDropDownButton = () => {
                                         <path
                                             d="M107.04 235.241H91.823v-4.363h15.217v4.363zm-.191-4.172H92.012v3.981h14.837v-3.981z"/>
                                     </svg>
-                                    <span>Espanhol</span>
+                                    <span><Translator path="navbar.burguer.es"/></span>
                                 </button>
                             </li>
-                            <li>
-                                <button style={{padding: "10px 15px"}}>
+                            <li className={selectedLanguage === "cs" ? "selected" : ""}>
+                                <button style={{padding: "10px 15px"}} onClick={()=> handleChangeLanguage("cs")}>
                                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="24" height="16">
                                         <rect width="24" height="16" fill="#d7141a"/>
                                         <rect width="24" height="8" fill="#fff"/>
                                         <path d="M 12,8 0,0 V 16 z" fill="#11457e"/>
                                     </svg>
-                                    <span>Tcheco</span>
+                                    <span><Translator path="navbar.burguer.cs"/></span>
                                 </button>
                             </li>
                         </ul>

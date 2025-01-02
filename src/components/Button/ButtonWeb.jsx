@@ -1,3 +1,5 @@
+import Translator from "../../i18n/Translator.js";
+
 export const ButtonWeb = ({url}) => {
     return (
         <>
@@ -15,7 +17,7 @@ export const ButtonWeb = ({url}) => {
                     </g>
 
                 </svg>
-                <span>View on Web</span>
+                <span><Translator path="button.web"/></span>
             </a>
         </>
     )

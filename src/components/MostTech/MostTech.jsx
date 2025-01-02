@@ -1,10 +1,11 @@
 import "./MostTech.css";
+import Translator from "../../i18n/Translator.js";
 
 export const MostTech = () => {
     return (
         <div className="container-most-tech">
             <div style={{display: "flex", flexDirection: "column", width: "100%"}}>
-                <span>Habilidades</span>
+                <span><Translator path="aboutMe.habilidades.title"/></span>
                 <div style={{display: "flex", width: "100%", justifyContent: "space-between"}}>
                     <p>Mobile:</p>
                     <div className="skill-box">
