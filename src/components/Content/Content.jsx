@@ -29,6 +29,12 @@ export const Content = () => {
                 alignItems: "center",
                 gap: "1.5rem"
             }}>
+                <div className="background-pulse">
+                    <div className="light"></div>
+                    <div className="light"></div>
+                    <div className="light"></div>
+                    <div className="light"></div>
+                </div>
                 <section id={"content-home"} style={{
                     height: "100vh",
                     marginTop: "10rem",
@@ -56,6 +62,22 @@ export const Content = () => {
                         <Lottie loop={true} animationData={animationData}/>
                     </div>
                 </section>
+                <div
+                    style={{
+                        height: "350px",
+                        top: "150%",
+                        left: "-3%"
+                    }}
+                    className="light">
+                </div>
+                <div
+                    style={{
+                        height: "350px",
+                        top: "150%",
+                        right: "-3%"
+                    }}
+                    className="light">
+                </div>
                 <section id={"content-aboutme"} style={{height: "100vh", width: "100%", gap: "1.5rem"}}>
                     <Divider text={<Translator path="divider.aboutMe"/>}/>
                     <div style={{"display": "flex", gap: "inherit"}}>
@@ -103,6 +125,22 @@ export const Content = () => {
                     <Divider text={<Translator path="divider.tech"/>}/>
                     <Sliding/>
                 </section>
+                <div
+                    style={{
+                        height: "350px",
+                        top: "250%",
+                        right: "-3%"
+                    }}
+                    className="light">
+                </div>
+                <div
+                    style={{
+                        height: "350px",
+                        top: "250%",
+                        left: "-3%"
+                    }}
+                    className="light">
+                </div>
                 <section id={"content-projects"} style={{margin: "25px 0", width: "100%"}}>
                     <div style={{display: "flex", flexDirection: "column", width: "100%"}}>
                         <Divider text={<Translator path="divider.projetos"/>}/>
@@ -127,33 +165,7 @@ export const Content = () => {
                                                    imgUrl={"https://private-user-images.githubusercontent.com/121266927/386850121-a9bc0754-b6b3-42d6-8bc5-3cfb712c4049.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzU2OTEwMTcsIm5iZiI6MTczNTY5MDcxNywicGF0aCI6Ii8xMjEyNjY5MjcvMzg2ODUwMTIxLWE5YmMwNzU0LWI2YjMtNDJkNi04YmM1LTNjZmI3MTJjNDA0OS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEwMVQwMDE4MzdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hYzI2NWJhNDUwNDBiNTRhZTIyYmRmMTVhM2U2MmNlODRhMTc5NmE5MzVmNTA4OTdhZGUxNmI1ODcxMjhhN2JlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.n3byB2Tce_Hr9K9qUWOk7NW80fE9iRTu3qOGUYzTq5I"}/>
                                     </SlideShow>
                                     <p>
-                                        Eu sou blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla
-                                        Eu sou blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla
-                                        Eu sou blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla
-                                        Eu sou blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla
-                                        Eu sou blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
-                                        blablabla blablabla blablabla
+                                        <Translator path="projeto.Goth4Goth.text"/>
                                     </p>
                                     <div style={{display: "flex", justifyContent: "space-between"}}>
                                         <div>
@@ -365,6 +377,7 @@ export const Content = () => {
                                         </div>
                                     </div>
                                 </DropDownProjects>
+                                <div>=</div>
                             </div>
                         </Card>
                         <Divider text={<Translator path="divider.contato"/>}/>
