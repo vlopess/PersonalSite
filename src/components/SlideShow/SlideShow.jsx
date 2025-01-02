@@ -1,13 +1,13 @@
 import "./SlideShow.css";
 import {useEffect, useState} from "react";
 
-export const SlideShow = ({children}) => {
+export const SlideShow = ({id, children}) => {
 
     const [slideIndex, setSlideIndex] = useState(1);
 
     const showSlides = (n) => {
         let i;
-        let slides = document.getElementsByClassName("mySlides");
+        let slides = document.getElementsByClassName(id);
 
         if (n > slides.length) {
             setSlideIndex(1);
@@ -22,9 +22,16 @@ export const SlideShow = ({children}) => {
         }
 
         if((slideIndex - 1) < slides.length)
-            slides[slideIndex-1].style.display = "block";
+        {
+            slides[slideIndex-1].style.display = "flex";
+            slides[slideIndex-1].style.justifyContent = "center";
+        }
         else
-            slides[0].style.display = "block";
+        {
+            slides[0].style.display = "flex";
+            slides[0].style.justifyContent = "center";
+            setSlideIndex(1);
+        }
     }
 
     useEffect(() => {
