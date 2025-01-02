@@ -144,6 +144,7 @@
 
 /* actions */
 
+.selected,
 .popup-window ul button:hover,
 .popup-window ul button:focus-visible,
 .popup-window ul button:hover svg,
