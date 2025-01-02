@@ -1,19 +1,19 @@
 import "./DropDownProjects.css";
 
-export const DropDownProjects = ({title, children}) => {
+export const DropDownProjects = ({id, title, children}) => {
     return (
         <>
             <div className="dropdown">
                 <input
                     hidden=""
                     className="sr-only"
-                    name={title.replaceAll(" ", "")}
-                    id={title.replaceAll(" ", "")}
+                    name={id.replaceAll(" ", "")}
+                    id={id.replaceAll(" ", "")}
                     type="checkbox"
                 />
                 <label
                     aria-label="dropdown scrollbar"
-                    htmlFor={title.replaceAll(" ", "")}
+                    htmlFor={id.replaceAll(" ", "")}
                     className="trigger"
                 >{title}</label>
                 <ul className="list webkit-scrollbar" role="list" dir="auto">
