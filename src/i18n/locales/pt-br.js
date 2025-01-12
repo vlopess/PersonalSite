@@ -26,7 +26,8 @@ export default {
                 text : 'Olá! Me chamo Victor, sou apaixonado por programação. Tenho 2 anos de experiência em desenvolvimento de software, com o foco em desenvolmento mobile. Minha jornada começou com Flutter e Python, além disso, no ambiente profissional, desenvolvo com .NET. Tenho interesse em Spring Boot e React, trabalhando em projetos pessoais. Quando não estou programando, gosto de assistir filmes.',
             },
             article : {
-                title : 'Últimos Artigos'
+                title : 'Últimos Artigos',
+                more : 'Ver Mais'
             },
             timeLine : {
                 title : 'Linha do Tempo'

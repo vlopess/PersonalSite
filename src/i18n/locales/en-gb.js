@@ -26,7 +26,8 @@ export default {
                 text: 'Hello! My name is Victor, and I am passionate about programming. I have 2 years of experience in software development, focusing on mobile development. My journey began with Flutter and Python, and I also work professionally with .NET. I am interested in Spring Boot and React, working on personal projects. When I am not programming, I enjoy watching movies.',
             },
             article: {
-                title: 'Latest Articles'
+                title: 'Latest Articles',
+                more : 'See more'
             },
             timeLine: {
                 title: 'Timeline'
