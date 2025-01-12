@@ -27,7 +27,7 @@ export const Content = () => {
             if (screenWidth < 992) {
                 setHeightCard(350);
             } else {
-                setHeightCard(275);
+                setHeightCard(280);
             }
         };
 
@@ -47,7 +47,7 @@ export const Content = () => {
                 alignItems: "center",
                 gap: "1.5rem"
             }}>
-                <div className="background-pulse">
+                <div className="background-pulse hide-md">
                     <div className="light"></div>
                     <div className="light"></div>
                     <div className="light"></div>
@@ -85,7 +85,7 @@ export const Content = () => {
                         top: "150%",
                         left: "-3%"
                     }}
-                    className="light">
+                    className="light hide-md">
                 </div>
                 <div
                     style={{
@@ -93,7 +93,7 @@ export const Content = () => {
                         top: "150%",
                         right: "-3%"
                     }}
-                    className="light">
+                    className="light hide-md">
                 </div>
                 <section id={"content-aboutme"} style={{width: "100%", gap: "1.5rem"}}>
                     <Divider text={<Translator path="divider.aboutMe"/>}/>
@@ -103,6 +103,7 @@ export const Content = () => {
                                 <h2><Translator path="aboutMe.bio.title"/></h2>
                                 <p>
                                     <Translator path="aboutMe.bio.text"/>
+                                    <a target={"_blank"} href={Translator({ path: "aboutMe.bio.cv_language" })}><Translator path="aboutMe.bio.cv"/></a>
                                 </p>
                             </div>
                         </Card>

@@ -97,36 +97,6 @@
     }
 }
 
-.dot {
-    width: 10px;
-    aspect-ratio: 1;
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 0 10px #ffffff;
-    border-radius: 100px;
-    z-index: 20;
-    animation: moveDot 6s linear infinite;
-}
-
-@keyframes moveDot {
-    0%,
-    100% {
-        top: -1%;
-        right: -1%;
-    }
-    25% {
-        top: -1%;
-        right: 100%;
-    }
-    50% {
-        top: 100%;
-        right: 100%;
-    }
-    75% {
-        top: 100%;
-        right: -1%;
-    }
-}
 
 #content-contacts{
     display: flex;
@@ -201,6 +171,7 @@
     width: 100%;
     height: 100%;
 }
+
 .light {
     position: absolute;
     width: 50px; /* Tamanho maior */
@@ -267,10 +238,17 @@
         width: 80px;
     }
     .popup {
-        margin-right: 1rem;
+        margin-right: -0.5rem;
     }
     .description-project{
         flex-direction: column;
     }
+}
+
+@media (max-width: 992px) {
+    .hide-md {
+        display: none;
+    }
+
 }
 
