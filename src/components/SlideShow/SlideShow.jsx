@@ -4,10 +4,14 @@ import {useEffect, useState} from "react";
 export const SlideShow = ({id, children}) => {
 
     const [slideIndex, setSlideIndex] = useState(1);
+    const [slideLength, setSlideLength] = useState(0);
+
 
     const showSlides = (n) => {
         let i;
         let slides = document.getElementsByClassName(id);
+
+        setSlideLength(slides.length);
 
         if (n > slides.length) {
             setSlideIndex(1);
@@ -49,8 +53,8 @@ export const SlideShow = ({id, children}) => {
         <>
             <div className="slideshow-container">
                 {children}
-                <a className="prev" onClick={() => plusSlides(-1)}>❮</a>
-                <a className="next" onClick={() => plusSlides(1)}>❯</a>
+                {slideIndex !== 1 &&(<a className="prev" onClick={() => plusSlides(-1)}>❮</a>)}
+                {slideLength !== slideIndex && (<a className="next" onClick={() => plusSlides(1)}>❯</a>)}
             </div>
         </>
     )

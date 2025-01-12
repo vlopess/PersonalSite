@@ -80,3 +80,9 @@ img {vertical-align: middle;}
 .mySlides img {
     max-height: 300px;
 }
+
+@media (max-width: 992px) {
+    .mySlides img {
+        max-height: 150px;
+    }
+}
