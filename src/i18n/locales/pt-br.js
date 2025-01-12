@@ -23,7 +23,9 @@ export default {
         aboutMe : {
             bio : {
                 title : 'Bio',
-                text : 'Olá! Me chamo Victor, sou apaixonado por programação. Tenho 2 anos de experiência em desenvolvimento de software, com o foco em desenvolmento mobile. Minha jornada começou com Flutter e Python, além disso, no ambiente profissional, desenvolvo com .NET. Tenho interesse em Spring Boot e React, trabalhando em projetos pessoais. Quando não estou programando, gosto de assistir filmes.',
+                text : 'Olá! Me chamo Victor, sou apaixonado por programação. Tenho 2 anos de experiência em desenvolvimento de software, com o foco em desenvolmento mobile. Minha jornada começou com Flutter e Python, além disso, no ambiente profissional, desenvolvo com .NET. Tenho interesse em Spring Boot e React, trabalhando em projetos pessoais. Quando não estou programando, gosto de assistir filmes. ',
+                cv : 'Confira o meu CV.',
+                cv_language: 'resume_pt.pdf'
             },
             article : {
                 title : 'Últimos Artigos',

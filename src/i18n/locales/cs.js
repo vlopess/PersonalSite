@@ -23,7 +23,9 @@ export default {
         aboutMe: {
             bio: {
                 title: 'Biografie',
-                text: 'Ahoj! Jmenuji se Victor a jsem nadšenec do programování. Mám 2 roky zkušeností s vývojem softwaru, zaměřuji se na vývoj mobilních aplikací. Moje cesta začala s Flutterem a Pythonem, a profesionálně pracuji s .NET. Mám zájem o Spring Boot a React, na kterých pracuji na osobních projektech. Když neprogramuji, rád sleduji filmy.',
+                text: 'Ahoj! Jmenuji se Victor a jsem nadšenec do programování. Mám 2 roky zkušeností s vývojem softwaru, zaměřuji se na vývoj mobilních aplikací. Moje cesta začala s Flutterem a Pythonem, a profesionálně pracuji s .NET. Mám zájem o Spring Boot a React, na kterých pracuji na osobních projektech. Když neprogramuji, rád sleduji filmy. ',
+                cv: 'Podívejte se na můj životopis.',
+                cv_language: 'resume_cs.pdf'
             },
             article: {
                 title: 'Poslední Články',
