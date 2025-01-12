@@ -103,7 +103,7 @@ export const Content = () => {
                                 <h2><Translator path="aboutMe.bio.title"/></h2>
                                 <p>
                                     <Translator path="aboutMe.bio.text"/>
-                                    <a target={"_blank"} href={Translator({ path: "aboutMe.bio.cv_language" })}><Translator path="aboutMe.bio.cv"/></a>
+                                    <a target={"_blank"} href={"resumes/" + Translator({ path: "aboutMe.bio.cv_language" })}><Translator path="aboutMe.bio.cv"/></a>
                                 </p>
                             </div>
                         </Card>
