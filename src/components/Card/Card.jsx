@@ -1,6 +1,6 @@
 import "./Card.css"
 
-export const Card = ({id, children, height = 250, width = "100%", showPoint = false}) => {
+export const Card = ({id, children, height = 250, width = "100%"}) => {
     return (
         <>
             <div
