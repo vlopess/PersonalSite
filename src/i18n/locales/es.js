@@ -44,7 +44,7 @@ export default {
                 text: 'Goth4Goth es una aplicación de chat en tiempo real creada para la comunidad gótica y alternativa, donde los usuarios pueden conectarse de forma anónima y discutir intereses en común. Con salas públicas y privadas, Goth4Goth ofrece un espacio seguro y exclusivo para intercambiar ideas, conocer nuevas personas y explorar temas subculturales.'
             },
             YourTaste: {
-                title: 'Your Taste Around The World: sitio interactivo que permite a los usuarios descubrir el origen de los artistas que más escuchan',
+                title: 'Your Taste Around The World: Descubre el origen de los artistas que más escuchas',
                 text: 'Your Taste Around The World es un sitio interactivo que permite a los usuarios descubrir el origen de los artistas que más escuchan a través de su cuenta de Last.fm o Spotify. Your Taste Around The World está hecho en React y consume las API de Last.fm, Spotify y Gemini para mostrar el origen de los artistas que el usuario escucha.'
             },
             VimTutorial: {
@@ -68,7 +68,7 @@ export default {
                 text: 'Este proyecto es el resultado de un trabajo final del curso de Programación Orientada a Objetos (POO). El Sudoku fue desarrollado como una aplicación de ventana (Swing) utilizando los principios fundamentales de POO. Realizado en colaboración con un compañero'
             },
             SimilarTaste: {
-                title: 'Similar Taste: proyecto que permite a los usuarios descubrir canciones y artistas similares basados en sus preferencias musicales',
+                title: 'Similar Taste: descubre artistas similares a tus preferencias musicales',
                 text: 'Similar Taste es un proyecto que permite a los usuarios descubrir canciones y artistas similares basados en sus preferencias musicales utilizando la API de Last.fm. Ayuda a encontrar música que se alinea con sus gustos. Los usuarios pueden ingresar el nombre de un artista que les guste y encontrar artistas que compartan estilos y características similares al artista ingresado.'
             }
         },

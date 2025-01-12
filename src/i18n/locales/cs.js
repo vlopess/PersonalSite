@@ -44,7 +44,7 @@ export default {
                 text: 'Goth4Goth je aplikace chatu v reálném čase vytvořená pro gotickou a alternativní komunitu, kde se uživatelé mohou anonymně spojit a diskutovat o společných zájmech. Díky veřejným a soukromým místnostem nabízí Goth4Goth bezpečný a exkluzivní prostor pro výměnu myšlenek, poznávání nových lidí a zkoumání subkulturních témat.'
             },
             YourTaste: {
-                title: 'Your Taste Around The World: interaktivní stránka umožňující uživatelům objevovat původ jejich oblíbených umělců',
+                title: 'Your Taste Around The World: objevte původ umělců, které nejvíce posloucháte',
                 text: 'Your Taste Around The World je interaktivní stránka umožňující uživatelům objevovat původ jejich oblíbených umělců prostřednictvím účtu na Last.fm nebo Spotify. Your Taste Around The World je vytvořený v Reactu a využívá API Last.fm, Spotify a Gemini pro zobrazení původu umělců, které uživatel poslouchá.'
             },
             VimTutorial: {
@@ -68,7 +68,7 @@ export default {
                 text: 'Tento projekt je výsledkem závěrečné práce z kurzu Objektově Orientované Programování (OOP). Sudoku bylo vyvinuto jako oknová aplikace (Swing) pomocí základních principů OOP. Realizováno ve dvojici'
             },
             SimilarTaste: {
-                title: 'Similar Taste: projekt umožňující uživatelům objevovat podobné písně a umělce podle jejich hudebního vkusu',
+                title: 'Similar Taste: objevte umělce podobné vašim hudebním preferencím',
                 text: 'Similar Taste je projekt umožňující uživatelům objevovat podobné písně a umělce podle jejich hudebního vkusu pomocí API Last.fm. Pomáhá najít hudbu, která odpovídá jejich vkusu. Uživatelé mohou zadat jméno umělce, kterého mají rádi, a najít umělce, kteří sdílejí podobné styly a vlastnosti s vloženým umělcem.'
             }
         },

@@ -44,7 +44,7 @@ export default {
                 text: 'Goth4Goth is a real-time chat app created for the gothic and alternative community, where users can connect anonymously and discuss their shared interests. With public and private rooms, Goth4Goth provides a safe and exclusive space to exchange ideas, meet new people, and explore subcultural topics.'
             },
             YourTaste: {
-                title: 'Your Taste Around The World: interactive website that allows users to discover the origin of the artists they listen to most',
+                title: 'Your Taste Around The World: discover the origin of the artists you listen to the most',
                 text: 'Your Taste Around The World is an interactive website that allows users to discover the origin of the artists they listen to most through their Last.fm or Spotify account. Your Taste Around The World is built in React and consumes APIs from Last.fm, Spotify, and Gemini to display the origin of the artists the user listens to.'
             },
             VimTutorial: {
@@ -68,7 +68,7 @@ export default {
                 text: 'This project is the result of a final assignment for the Object-Oriented Programming (OOP) course. The Sudoku was developed as a window application (Swing) using the fundamental principles of OOP. Completed in collaboration with a colleague'
             },
             SimilarTaste: {
-                title: 'Similar Taste: project that allows users to discover similar songs and artists based on their music preferences',
+                title: 'Similar Taste: discover artists similar to your musical preferences',
                 text: 'Similar Taste is a project that allows users to discover similar songs and artists based on their music preferences using the Last.fm API. It helps users find music that aligns with their tastes. Users can enter the name of an artist they like and find artists that share similar styles and characteristics with the entered artist.'
             }
         },
