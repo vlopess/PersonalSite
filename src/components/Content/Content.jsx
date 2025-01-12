@@ -15,8 +15,26 @@ import {SlideItem} from "../SlideShow/SlideItem/SlideItem.jsx";
 import {ButtonGithub} from "../Button/ButtonGithub.jsx";
 import {ButtonWeb} from "../Button/ButtonWeb.jsx";
 import Translator from "../../i18n/Translator.js";
+import {useEffect, useState} from "react";
 
 export const Content = () => {
+    const [heightCard, setHeightCard] = useState(0);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth < 992) {
+                setHeightCard(350);
+            } else {
+                setHeightCard(275);
+            }
+        };
+
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+    }, []);
 
     return (
         <>
@@ -35,14 +53,13 @@ export const Content = () => {
                     <div className="light"></div>
                     <div className="light"></div>
                 </div>
-                <section id={"content-home"} style={{
+                <section className={"home"} id={"content-home"} style={{
                     height: "100vh",
                     marginTop: "10rem",
                     display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "space-around"
+                    justifyContent: "space-around",
                 }}>
-                    <div style={{textAlign: "start", width: "50%"}}>
+                    <div style={{textAlign: "start"}}>
                         <h1><span><Translator path="home.hello"/></span><br/><Translator path="home.whoIam"/>
                             <div className={"wrapper"}>
                                 <span> Mobile </span>
@@ -78,10 +95,10 @@ export const Content = () => {
                     }}
                     className="light">
                 </div>
-                <section id={"content-aboutme"} style={{height: "100vh", width: "100%", gap: "1.5rem"}}>
+                <section id={"content-aboutme"} style={{width: "100%", gap: "1.5rem"}}>
                     <Divider text={<Translator path="divider.aboutMe"/>}/>
-                    <div style={{"display": "flex", gap: "inherit"}}>
-                        <Card height={275}>
+                    <div className={"bio-me"} style={{gap: "inherit"}}>
+                        <Card height={heightCard}>
                             <div style={{textAlign: "start"}}>
                                 <h2><Translator path="aboutMe.bio.title"/></h2>
                                 <p>
@@ -89,7 +106,7 @@ export const Content = () => {
                                 </p>
                             </div>
                         </Card>
-                        <Card height={275}>
+                        <Card height={heightCard}>
                             <div style={{textAlign: "start"}}>
                                 <div>
                                     <h2><Translator path="aboutMe.article.title"/></h2>
@@ -104,8 +121,7 @@ export const Content = () => {
                                         text={"Automação de testes: Testes de Interface do Usuário (UI) — Python, PyTest e Selenium (4/4)"}
                                         link={"#"}/>
                                     <div style={{margin: "30px 0 5px 0"}}>
-                                        <Article svg={ArrowRight} text={"Ver Mais"}
-                                                 link={"https://medium.com/@Victorldev"}/>
+                                        <Article svg={ArrowRight} text={<Translator path="aboutMe.article.more"/>} link={"https://medium.com/@Victorldev"}/>
                                     </div>
                                     {/*<Article text={"Automação de testes: Testes de Interface do Usuário (UI) — Python, PyTest e Selenium (4/4)"} link={"#"}/>*/}
                                     {/*<Article text={"Automação de testes: Testes de Interface do Usuário (UI) — Python, PyTest e Selenium (4/4)"} link={"#"}/>*/}
@@ -114,7 +130,7 @@ export const Content = () => {
                             </div>
                         </Card>
                     </div>
-                    <div style={{"display": "flex", gap: "inherit"}}>
+                    <div className={"bio-me"} style={{gap: "inherit"}}>
                         <Card>
                             <TimeLine/>
                         </Card>
@@ -125,26 +141,10 @@ export const Content = () => {
                     <Divider text={<Translator path="divider.tech"/>}/>
                     <Sliding/>
                 </section>
-                <div
-                    style={{
-                        height: "350px",
-                        top: "250%",
-                        right: "-3%"
-                    }}
-                    className="light">
-                </div>
-                <div
-                    style={{
-                        height: "350px",
-                        top: "250%",
-                        left: "-3%"
-                    }}
-                    className="light">
-                </div>
                 <section id={"content-projects"} style={{margin: "25px 0", width: "100%"}}>
                     <div style={{display: "flex", flexDirection: "column", width: "100%"}}>
                         <Divider text={<Translator path="divider.projetos"/>}/>
-                        <Card showPoint={true} height={800}>
+                        <Card height={800}>
                             <div
                                 id={"content-projects-list"}
                                 style={{
@@ -167,7 +167,7 @@ export const Content = () => {
                                     <p>
                                         <Translator path="projeto.Goth4Goth.text"/>
                                     </p>
-                                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
                                         <div>
                                             <img src="https://skillicons.dev/icons?i=react"/>
                                             <img src="https://skillicons.dev/icons?i=css"/>
@@ -194,7 +194,7 @@ export const Content = () => {
                                     <p>
                                         <Translator path="projeto.YourTaste.text"/>
                                     </p>
-                                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
                                         <div>
                                             <img src="https://skillicons.dev/icons?i=react"/>
                                             <img src="https://skillicons.dev/icons?i=css"/>
@@ -224,7 +224,7 @@ export const Content = () => {
                                     <p>
                                         <Translator path="projeto.VimTutorial.text"/>
                                     </p>
-                                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
                                         <div>
                                             <img src="https://skillicons.dev/icons?i=react"/>
                                             <img src="https://skillicons.dev/icons?i=css"/>
@@ -254,7 +254,7 @@ export const Content = () => {
                                     <p>
                                         <Translator path="projeto.MyMusicTaste.text"/>
                                     </p>
-                                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
                                         <div>
                                             <img src="https://skillicons.dev/icons?i=dart"/>
                                             <img src="https://skillicons.dev/icons?i=flutter"/>
@@ -282,7 +282,7 @@ export const Content = () => {
                                         <Translator path="projeto.Olympics.text"/>
                                         <a target={"_blank"} href="https://github.com/sergiocerq"> serjão do react.</a>
                                     </p>
-                                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
                                         <div>
                                             <img src="https://skillicons.dev/icons?i=react"/>
                                             <img src="https://skillicons.dev/icons?i=js"/>
@@ -293,7 +293,7 @@ export const Content = () => {
                                             <img src="https://skillicons.dev/icons?i=eclipse"/>
                                             <img src="https://skillicons.dev/icons?i=postgres"/>
                                         </div>
-                                        <div style={{display: "flex"}}>
+                                        <div>
                                             <ButtonGithub url={"https://github.com/vlopess/OlymFollow-FrontEnd"}/>
                                         </div>
                                     </div>
@@ -315,7 +315,7 @@ export const Content = () => {
                                         <Translator path="projeto.LeChat.text"/> <a
                                         href="https://github.com/vlopess/LeChat-in-Java"> terminal com Java</a>
                                     </p>
-                                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
                                         <div>
                                             <img src="https://skillicons.dev/icons?i=dart"/>
                                             <img src="https://skillicons.dev/icons?i=flutter"/>
@@ -344,7 +344,7 @@ export const Content = () => {
                                                                 href="https://github.com/sergiocerq"> sérgio
                                         cerqueira.</a>
                                     </p>
-                                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
                                         <div>
                                             <img src="https://skillicons.dev/icons?i=java"/>
                                         </div>
@@ -363,7 +363,7 @@ export const Content = () => {
                                     <p>
                                         <Translator path="projeto.SimilarTaste.text"/>
                                     </p>
-                                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
                                         <div>
                                             <img src="https://skillicons.dev/icons?i=js"/>
                                             <img src="https://skillicons.dev/icons?i=html"/>
@@ -373,7 +373,6 @@ export const Content = () => {
                                         <div style={{display: "flex"}}>
                                             <ButtonGithub url={"https://github.com/vlopess/SimilarTaste"}/>
                                             <ButtonWeb url={"https://vlopess.github.io/SimilarTaste/"}/>
-
                                         </div>
                                     </div>
                                 </DropDownProjects>
