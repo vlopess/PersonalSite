@@ -8,7 +8,7 @@ export const Content = () => {
         <>
             <Routes>
                 <Route element={<ContentHome/>} path={"/"}></Route>
-                <Route element={<ContentAppTCC/>} path={"/app"}></Route>
+                <Route element={<ContentAppTCC/>} path={"/ByteAcademy"}></Route>
                 {/*<Route element={<ContentHome/>} path={"/app/blog"}></Route>*/}
             </Routes>
         </>
