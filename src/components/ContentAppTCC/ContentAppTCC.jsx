@@ -16,7 +16,7 @@ export const ContentAppTCC = () => {
                 <div>
                     <div className={"container-flex"}>
                         <img id={"building"} src={Building} alt="Building"/>
-                        <div>
+                        <div style={{margin: "50px"}}>
                             <a target={"_blank"} href="https://forms.gle/u7ULRgp12CLiNKtj7">
                                 <img width={200} src={Qrcode} alt="Qrcode"/>
                                 <p>Participe da pesquisa!</p>
