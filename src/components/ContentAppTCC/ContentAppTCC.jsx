@@ -12,15 +12,10 @@ export const ContentAppTCC = () => {
 
     return (
         <>
-            <div style={{
-                width: "100vw",
-                height: "100vh",
-                backgroundColor: "#fcf2e1",
-                alignContent: "center"
-            }}>
+            <div className={"column-flex"}>
                 <div>
                     <div className={"container-flex"}>
-                        <img src={Building} alt="Building"/>
+                        <img id={"building"} src={Building} alt="Building"/>
                         <div>
                             <a target={"_blank"} href="https://forms.gle/u7ULRgp12CLiNKtj7">
                                 <img width={200} src={Qrcode} alt="Qrcode"/>
@@ -29,7 +24,7 @@ export const ContentAppTCC = () => {
                         </div>
                     </div>
                     <div style={{height: "100px", alignContent: "end"}}>
-                        <h3 className={"texto-pulsante"}>Em construção...</h3>
+                        <h3 className={"texto-pulsante"}>Site em construção...</h3>
                     </div>
                 </div>
                 <div>

@@ -35,17 +35,7 @@
 
 }
 
-h2{
-    color: black;
-    margin-bottom: 0;
-    font-family: "EB Garamond", serif;
-}
 
-p{
-    color: lightslategray;
-    margin-top: 0;
-    font-family: "EB Garamond", serif;
-}
 
 .hover-container {
     position: relative;
@@ -61,7 +51,7 @@ p{
 .hover-image {
     position: absolute;
     top: -50%;
-    right: 50%;
+    right: 40%;
     transform: translateX(-50%);
     opacity: 0;
     visibility: hidden;
@@ -86,6 +76,29 @@ p{
 @media (max-width: 778px) {
     .container-flex {
         flex-direction: column-reverse;
+    }
+
+    #building{
+        display: none;
+    }
+}
+
+.column-flex{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fcf2e1;
+    align-content: center;
+
+    h2{
+        color: black;
+        margin-bottom: 0;
+        font-family: "EB Garamond", serif;
+    }
+
+    p{
+        color: lightslategray;
+        margin-top: 0;
+        font-family: "EB Garamond", serif;
     }
 }
 
