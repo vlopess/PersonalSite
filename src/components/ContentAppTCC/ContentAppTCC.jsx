@@ -23,12 +23,12 @@ export const ContentAppTCC = () => {
                             </a>
                         </div>
                     </div>
-                    <div style={{height: "100px", alignContent: "end"}}>
+                    <div className={"container-pulsante"}>
                         <h3 className={"texto-pulsante"}>Site em construção...</h3>
                     </div>
                 </div>
                 <div>
-                    <div className={"hover-container"}>>
+                    <div className={"hover-container"}>
                         <h2><span className={"hover-text"}>「CodeCraft」</span></h2>
                         <img src={lain} alt="lain dancing" className="hover-image"/>
                     </div>
