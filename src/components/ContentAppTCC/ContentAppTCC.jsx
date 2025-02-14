@@ -19,7 +19,7 @@ export const ContentAppTCC = () => {
                         <div style={{margin: "50px"}}>
                             <a target={"_blank"} href="https://forms.gle/u7ULRgp12CLiNKtj7">
                                 <img width={200} src={Qrcode} alt="Qrcode"/>
-                                <p><b>Participe da pesquisa e ganhe um bombom 🍫!<></b></p>
+                                <p><b>Participe da pesquisa e ganhe um bombom 🍫!</b></p>
                             </a>
                         </div>
                     </div>
