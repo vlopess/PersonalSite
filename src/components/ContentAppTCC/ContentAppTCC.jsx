@@ -29,7 +29,7 @@ export const ContentAppTCC = () => {
                 </div>
                 <div>
                     <div className={"hover-container"}>
-                        <h2><span className={"hover-text"}>「ByteAcademy」</span></h2>
+                        <h2><span className={"hover-text"}>「NullAcademy」</span></h2>
                         <img src={lain} alt="lain dancing" className="hover-image"/>
                     </div>
                     <p>Aplicativo Educacional Gamificado</p>
