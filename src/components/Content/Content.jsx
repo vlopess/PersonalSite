@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import {ContentHome} from "../ContentHome/ContentHome.jsx";
-import {ContentAppTCC} from "../ContentAppTCC/ContentAppTCC.jsx";
+import {Redirect} from "../Redirect/Redirect.jsx";
 
 
 export const Content = () => {
@@ -8,8 +8,7 @@ export const Content = () => {
         <>
             <Routes>
                 <Route element={<ContentHome/>} path={"/"}></Route>
-                <Route element={<ContentAppTCC/>} path={"/app"}></Route>
-                {/*<Route element={<ContentHome/>} path={"/app/blog"}></Route>*/}
+                <Route path="/app" element={<Redirect url="https://nullacademy.netlify.app/" />} />
             </Routes>
         </>
     )
