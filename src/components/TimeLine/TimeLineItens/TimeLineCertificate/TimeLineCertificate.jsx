@@ -35,7 +35,7 @@ export const TimeLineCertificate = ({text, data}) => {
 
                     </svg>
                 </div>
-                <p>{data}</p>
+                <p className={"data"}>{data}</p>
                 <div className="tooltip-timeLine">{text}</div>
             </li>
         </>

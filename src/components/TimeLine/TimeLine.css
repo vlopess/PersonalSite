@@ -75,3 +75,10 @@ ul {
 .timeLine .icon-content div[data-social="certificate"] ~ .tooltip-timeLine {
     background-color: #0088cc;
 }
+
+@media (max-width: 992px) {
+    .data{
+        font-size: 12px;
+    }
+}
+
