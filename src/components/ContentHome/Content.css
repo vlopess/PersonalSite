@@ -107,7 +107,6 @@
 
 /* From Uiverse.io by neerajbaniwal */
 .btn-shine {
-    padding: 12px 48px;
     color: #fff;
     background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%) 0;
     -webkit-background-clip: text;
@@ -243,12 +242,13 @@
     .description-project{
         flex-direction: column;
     }
-}
 
-@media (max-width: 992px) {
     .hide-md {
         display: none;
     }
 
+    h1{
+        font-size: 2.2em;
+    }
 }
 

@@ -53,7 +53,7 @@ export const NavBarDropDownButton = () => {
                                       d="M24.172,32h-4.36l-1.008,4H16l4.764-15h2.444L28,36h-2.805L24.172,32z M20.444,30h3.101 l-1.559-5.714L20.444,30z"/>
                             </g>
                         </svg>
-                        <p className={"idioma"}>
+                        <p className={"descricao"}>
                             <Translator path="navbar.idioma"/>
                         </p>
                     </div>

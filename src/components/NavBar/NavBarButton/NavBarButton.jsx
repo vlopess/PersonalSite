@@ -8,7 +8,7 @@ export const NavBarButton = ({img, title, children, onTap}) => {
                 <button className="button-navbar" onClick={onTap}>
                     {img && (<img src={img} alt=""/>)}
                     {!img && (children)}
-                    {title}
+                    <p className={"descricao"}>{title}</p>
                 </button>
             </div>
         </>

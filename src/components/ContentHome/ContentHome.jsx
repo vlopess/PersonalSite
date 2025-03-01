@@ -73,7 +73,6 @@ export const ContentHome = () => {
                             <Translator path="home.dev"/>
                         </h1>
                         <p style={{
-                            fontSize: 22,
                             color: "grey"
                         }}>Victor Lopes | <Translator path="home.dev"/> Full-Stack</p>
                         <p className={"btn-shine"}><Translator path="home.welcome"/></p>

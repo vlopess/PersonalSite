@@ -116,8 +116,11 @@
     .popup-window {
         left: -50px;
     }
-    .idioma{
+    .descricao{
         display: none;
+    }
+    .button-navbar{
+        width: 70px !important;
     }
 }
 
