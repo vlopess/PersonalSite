@@ -39,6 +39,14 @@ export default {
             }
         },
         projeto: {
+            nullAcademyHub : {
+                title : 'Null Academy',
+                text : 'Null Academy je platforma, která podporuje výuku programování s gamifikovaným, interaktivním a přístupným přístupem. Aplikace, která je výsledkem závěrečného projektu kurzu, se zaměřuje na výuku základních programovacích konceptů. Null Academy Hub má více informací o projektu.'
+            },
+            cineArte : {
+                title : 'CineArte: jednoduchý zážitek pro sledování filmů na kartě 🎬✨',
+                text : 'CineArte je jednoduchý web vyvinutý v Reactu jako osobní výzva, vytvořený během několika dní. Kromě toho, že může administrátor sledovat aktuálně promítané filmy, může filmy spravovat.'
+            },
             Goth4Goth: {
                 title: 'Goth4Goth: chat v reálném čase vytvořený pro gotickou a alternativní komunitu',
                 text: 'Goth4Goth je aplikace chatu v reálném čase vytvořená pro gotickou a alternativní komunitu, kde se uživatelé mohou anonymně spojit a diskutovat o společných zájmech. Díky veřejným a soukromým místnostem nabízí Goth4Goth bezpečný a exkluzivní prostor pro výměnu myšlenek, poznávání nových lidí a zkoumání subkulturních témat.'

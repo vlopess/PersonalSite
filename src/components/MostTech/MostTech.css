@@ -41,13 +41,13 @@
 
 .skill-per.java {
     /*progreso de las diferentes lenguajes*/
-    width: 38%;
+    width: 28%;
     animation-delay: 0.1s;
 }
 
 .skill-per.dart {
     /*progreso de las diferentes lenguajes*/
-    width: 38%;
+    width: 48%;
     animation-delay: 0.1s;
 }
 
