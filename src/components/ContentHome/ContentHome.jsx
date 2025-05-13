@@ -115,15 +115,15 @@ export const ContentHome = () => {
                                     <h2><Translator path="aboutMe.article.title"/></h2>
                                 </div>
                                 <div style={{height: "10%"}}>
-                                    <Article text={"Native State Management in Flutter"}
-                                             link={"https://medium.com/@Victorldev/native-state-management-in-flutter-b44ca610f0df"}/>
                                     <Article
-                                        text={"Automação de testes: Testes de Interface do Usuário (UI) — Python, PyTest e Selenium (4/4)"}
-                                        link={"https://medium.com/@Victorldev/automa%C3%A7%C3%A3o-de-testes-testes-de-interface-do-usu%C3%A1rio-ui-python-pytest-e-selenium-4-4-92a56744cfe5"}/>
-                                    <Article text={"Automação de testes: Testes de Integração — Flutter (3/4)"}
-                                             link={"https://medium.com/@Victorldev/automa%C3%A7%C3%A3o-de-testes-testes-de-integra%C3%A7%C3%A3o-flutter-3-4-f093e6880cc0"}/>
-                                    <Article text={"Automação de testes: Testes Unitários — Java e JUnit (2/4)"}
-                                             link={"https://medium.com/@Victorldev/automa%C3%A7%C3%A3o-de-testes-testes-unit%C3%A1rios-java-e-junit-2-4-b5e6b004bd9d"}/>
+                                        text={"Understanding Future and Stream in Dart"}
+                                        link={"https://medium.com/@Victorldev/understanding-future-and-stream-in-dart-cba0842a8470"}/>
+                                    <Article text={"Dynamic Interfaces with Server-Driven UI for Mobile"}
+                                             link={"https://medium.com/@Victorldev/dynamic-interfaces-with-server-driven-ui-for-mobile-bf934b8b3c4f"}/>
+                                    <Article text={"Inversion of Control (IoC) Principle"}
+                                             link={"https://medium.com/@Victorldev/inversion-of-control-ioc-principle-a8b8a79e1e01"}/>                                    
+                                    <Article text={"Understanding keyword Yield in Dart + Examples in other languages"}
+                                             link={"https://medium.com/@Victorldev/understanding-keyword-yield-in-dart-examples-in-other-languages-ae0feef81ccf"}/>
                                     <div style={{margin: "30px 0 5px 0"}}>
                                         <Article svg={ArrowRight} text={<Translator path="aboutMe.article.more"/>} link={"https://medium.com/@Victorldev"}/>
                                     </div>
