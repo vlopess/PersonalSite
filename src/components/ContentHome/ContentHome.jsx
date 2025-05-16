@@ -179,7 +179,7 @@ export const ContentHome = () => {
                                         </div>
                                     </div>
                                 </DropDownProjects>
-                                <DropDownProjects
+{/*                                 <DropDownProjects
                                     id={"cineArteID"}
                                     title={<Translator path="projeto.cineArte.title"/>}>
                                     <SlideShow id={"cineArte"}>
@@ -204,7 +204,7 @@ export const ContentHome = () => {
                                             <ButtonWeb url={"https://cinearte.netlify.app/"}/>
                                         </div>
                                     </div>
-                                </DropDownProjects>
+                                </DropDownProjects> */}
                                 <DropDownProjects
                                     id={"Goth4GothID"}
                                     title={<Translator path="projeto.Goth4Goth.title"/>}>
