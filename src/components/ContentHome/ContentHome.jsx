@@ -115,6 +115,8 @@ export const ContentHome = () => {
                                     <h2><Translator path="aboutMe.article.title"/></h2>
                                 </div>
                                 <div style={{height: "10%"}}>
+                                    <Article text={"Automating Flutter Apps: An Introduction to CI/CD Pipelines"}
+                                             link={"https://medium.com/@Victorldev/automating-flutter-apps-an-introduction-to-ci-cd-pipelines-197919d0e886"}/>                                    
                                     <Article text={"Asynchronous builders in Flutter: Analyzing FutureBuilder and StreamBuilder"}
                                              link={"https://medium.com/@Victorldev/asynchronous-builders-in-flutter-analyzing-futurebuilder-and-streambuilder-d3f8af3af88a"}/>
                                     <Article
@@ -122,8 +124,6 @@ export const ContentHome = () => {
                                         link={"https://medium.com/@Victorldev/understanding-future-and-stream-in-dart-cba0842a8470"}/>
                                     <Article text={"Dynamic Interfaces with Server-Driven UI for Mobile"}
                                              link={"https://medium.com/@Victorldev/dynamic-interfaces-with-server-driven-ui-for-mobile-bf934b8b3c4f"}/>
-                                    <Article text={"Inversion of Control (IoC) Principle"}
-                                             link={"https://medium.com/@Victorldev/inversion-of-control-ioc-principle-a8b8a79e1e01"}/>                                    
                                     <div style={{margin: "30px 0 5px 0"}}>
                                         <Article svg={ArrowRight} text={<Translator path="aboutMe.article.more"/>} link={"https://medium.com/@Victorldev"}/>
                                     </div>
