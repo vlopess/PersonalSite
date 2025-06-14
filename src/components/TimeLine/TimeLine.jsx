@@ -10,6 +10,7 @@ export const TimeLine = () => {
             <div style={{width: "100%"}}>
                 <h2><Translator path="aboutMe.timeLine.title"/></h2>
                 <ul className="timeLine">
+                    <TImeLineWork data={"2025/06 -->"}  text={"Horizon - Inovação e Tecnologia"}/>
                     <TimeLineCertificate data={"2024/12 -->"} text={"Introdução a Teste de Software (UFBA)"}/>
                     <TimeLineCertificate data={"2024/04 -->"} text={"Formação Spring Boot 3 (Alura)"}/>
                     <TimeLineCertificate data={"2024/03 -->"} text={"The Complete Spring Boot Development Bootcamp (Udemy)"}/>
