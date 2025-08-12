@@ -171,7 +171,7 @@ export const ContentHome = () => {
                                                    imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQGGz1NeWnueDQ/feedshare-shrink_1280/B4DZib5cDfGkAk-/0/1754962182998?e=1758153600&v=beta&t=4EgYVqo4glYRxpUt76O2VudNgMXJavB94-Ufg13z4us"}/>
                                     </SlideShow>
                                     <p>
-                                        <Translator path="projeto.nullAcademyHub.text"/>
+                                        <Translator path="projeto.kristnotes.text"/>
                                     </p>
                                     <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
                                         <div>
