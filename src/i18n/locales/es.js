@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto: {
+            kristnotes : {
+                title : 'KristNotes',
+                text : 'Una aplicación de código abierto centrada en notas compartidas, creada para facilitar la colaboración y el flujo de ideas entre estudiantes o cualquier persona que quiera crear y organizar conocimientos en conjunto.'
+            },
             nullAcademyHub : {
                 title : 'Null Academy',
                 text : 'Null Academy es una plataforma de apoyo a la enseñanza de la programación, con una propuesta gamificada, interactiva y accesible. Fruto de un proyecto de finalización del curso, la aplicación se centra en la enseñanza de conceptos fundamentales de programación. El Null Academy Hub tiene más información sobre el proyecto.'
