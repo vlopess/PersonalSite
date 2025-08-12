@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto: {
+            kristnotes : {
+                title : 'KristNotes',
+                text : 'An open-source app focused on shared notes, created to facilitate collaboration and the flow of ideas among students or anyone who wants to create and organize knowledge together.'
+            },
             nullAcademyHub : {
                 title : 'Null Academy',
                 text : 'Null Academy is a platform that supports programming education, with a gamified, interactive and accessible approach. The result of a final course project, the application focuses on teaching fundamental programming concepts. The Null Academy Hub has more information about the project.'
