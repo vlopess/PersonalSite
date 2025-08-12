@@ -156,6 +156,41 @@ export const ContentHome = () => {
                                     height: "100%"
                                 }}>
                                 <DropDownProjects
+                                    id={"kristnotesID"}
+                                    title={<Translator path="projeto.kristnotes.title"/>}>
+                                    <SlideShow id={"kristnotes"}>
+                                        <SlideItem id={"kristnotes"}
+                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQHoKZibP5JbBg/feedshare-shrink_2048_1536/B4DZib5cDeGkAo-/0/1754962183062?e=1758153600&v=beta&t=jZSq1jTXUzJXeNIZMKOdDZ-AjFOdLb2oE4VnKVvuYbY"}/>
+                                        </SlideShow>                                    
+                                        <SlideItem id={"kristnotes"}
+                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQGJzCxrfzviVA/feedshare-shrink_1280/B4DZib5cDfHwAk-/0/1754962183099?e=1758153600&v=beta&t=Ys0TaJSBC01ha7ub1ypU1b6CY0PmIS8QKd45-18wfG4"}/>
+                                        </SlideShow>                                    
+                                        <SlideItem id={"kristnotes"}
+                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQEQJbyrb0FjxA/feedshare-shrink_1280/B4DZib5cD0GsAk-/0/1754962183102?e=1758153600&v=beta&t=WE7ZRXKlU4W6tsMIZvVvNwBt7GuTbkDZV7RjxpofM2M"}/>
+                                        </SlideShow>                                
+                                        <SlideItem id={"kristnotes"}
+                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQEK6gexCail3w/feedshare-shrink_2048_1536/B4DZib5cDUH4Ao-/0/1754962183047?e=1758153600&v=beta&t=N5KM70xlw4fJ0mwwId3_zb7rEbcNhyI_SIXpsAY9SVg"}/>
+                                        </SlideShow>                                
+                                        <SlideItem id={"kristnotes"}
+                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQGGz1NeWnueDQ/feedshare-shrink_1280/B4DZib5cDfGkAk-/0/1754962182998?e=1758153600&v=beta&t=4EgYVqo4glYRxpUt76O2VudNgMXJavB94-Ufg13z4us"}/>
+                                        </SlideShow>
+                                    <p>
+                                        <Translator path="projeto.nullAcademyHub.text"/>
+                                    </p>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
+                                        <div>
+                                            <img src="https://skillicons.dev/icons?i=css"/>
+                                            <img src="https://skillicons.dev/icons?i=html"/>
+                                            <img src="https://skillicons.dev/icons?i=js"/>
+                                            <img src="https://skillicons.dev/icons?i=react"/>
+                                            <img src="https://skillicons.dev/icons?i=supabase"/>
+                                        </div>
+                                        <div style={{display: "flex"}}>
+                                        <ButtonWeb url={"https://kristnotes.com/"}/>
+                                        </div>
+                                    </div>
+                                </DropDownProjects>
+                                <DropDownProjects
                                     id={"nullAcademyHubID"}
                                     title={<Translator path="projeto.nullAcademyHub.title"/>}>
                                     <SlideShow id={"nullAcademyHub"}>
