@@ -18,6 +18,7 @@ import Translator from "../../i18n/Translator.js";
 import {useEffect, useState} from "react";
 import {NavBar} from "../NavBar/NavBar.jsx";
 import {Footer} from "../Footer/Footer.jsx";
+import Me from "../../assets/png/me.png";
 
 export const ContentHome = () => {
     const [heightCard, setHeightCard] = useState(0);
@@ -61,6 +62,7 @@ export const ContentHome = () => {
                     marginTop: "10rem",
                     display: "flex",
                     justifyContent: "space-around",
+                    width: "55vw"
                 }}>
                     <div style={{textAlign: "start"}}>
                         <h1><span><Translator path="home.hello"/></span><br/><Translator path="home.whoIam"/>
@@ -78,7 +80,7 @@ export const ContentHome = () => {
                         <p className={"btn-shine"}><Translator path="home.welcome"/></p>
                     </div>
                     <div className={"m2"}>
-                        <Lottie loop={true} animationData={animationData}/>
+                        <img className={'meImg'} src={Me} alt={''}/>
                     </div>
                 </section>
                 <div
@@ -93,7 +95,7 @@ export const ContentHome = () => {
                     style={{
                         height: "350px",
                         top: "150%",
-                        right: "-3%"
+                        right: "1%"
                     }}
                     className="light hide-md">
                 </div>
@@ -115,8 +117,10 @@ export const ContentHome = () => {
                                     <h2><Translator path="aboutMe.article.title"/></h2>
                                 </div>
                                 <div style={{height: "10%"}}>
+                                    <Article text={"Architectural Analysis of JUnit"}
+                                             link={"https://medium.com/stackademic/architectural-analysis-of-junit-d9472f9bf79b"}/>
                                     <Article text={"Automating Flutter Apps: An Introduction to CI/CD Pipelines"}
-                                             link={"https://medium.com/@Victorldev/automating-flutter-apps-an-introduction-to-ci-cd-pipelines-197919d0e886"}/>                                    
+                                             link={"https://medium.com/@Victorldev/automating-flutter-apps-an-introduction-to-ci-cd-pipelines-197919d0e886"}/>
                                     <Article text={"Asynchronous builders in Flutter: Analyzing FutureBuilder and StreamBuilder"}
                                              link={"https://medium.com/@Victorldev/asynchronous-builders-in-flutter-analyzing-futurebuilder-and-streambuilder-d3f8af3af88a"}/>
                                     <Article
@@ -210,32 +214,32 @@ export const ContentHome = () => {
                                         </div>
                                     </div>
                                 </DropDownProjects>
-{/*                                 <DropDownProjects
-                                    id={"cineArteID"}
-                                    title={<Translator path="projeto.cineArte.title"/>}>
-                                    <SlideShow id={"cineArte"}>
-                                        <SlideItem id={"cineArte"}
-                                                   imgUrl={"https://private-user-images.githubusercontent.com/121266927/428450000-42eb432f-79e6-4ec5-b9cb-7805d0659593.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzODYzMDksIm5iZiI6MTc0MzM4NjAwOSwicGF0aCI6Ii8xMjEyNjY5MjcvNDI4NDUwMDAwLTQyZWI0MzJmLTc5ZTYtNGVjNS1iOWNiLTc4MDVkMDY1OTU5My5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMTUzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iNWYzZjFlNjU5YWU4M2JmNzlhMDFlMDU3YmQ3ZTRmMTQxZDM2ZDhkYzVkMzdmOWU5Yzg0MjAyZmFhMDU3Y2IxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ydWKkPsuYbv4LhXovfjCQ7zSPuHJ03gm5NS24hVH-ik"}/>
-                                        <SlideItem id={"cineArte"}
-                                                   imgUrl={"https://private-user-images.githubusercontent.com/121266927/428450188-1049dd4e-dfeb-4a65-a166-5ab01d7e2e4d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzODYzMDksIm5iZiI6MTc0MzM4NjAwOSwicGF0aCI6Ii8xMjEyNjY5MjcvNDI4NDUwMTg4LTEwNDlkZDRlLWRmZWItNGE2NS1hMTY2LTVhYjAxZDdlMmU0ZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMTUzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04NDEwNzM5NjBkNTcyNDhiY2E0NzM1MGU0MGY1MzA2ZTQ2OGE0ZGJiZWRlNDFkZjMyOTQ5YmNiODE3OGU5MTQwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.mWyECnjkgbXKmbaz0LziprC-sdSDOHLfXWta5lYckDY"}/>
-                                        <SlideItem id={"cineArte"}
-                                                   imgUrl={"https://private-user-images.githubusercontent.com/121266927/428450406-dc68beca-a44a-47b8-b215-20836ef5fd88.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzODYzMDksIm5iZiI6MTc0MzM4NjAwOSwicGF0aCI6Ii8xMjEyNjY5MjcvNDI4NDUwNDA2LWRjNjhiZWNhLWE0NGEtNDdiOC1iMjE1LTIwODM2ZWY1ZmQ4OC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMTUzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMWU2ZmM1ZmQ3M2Y1MGYxYWU5ZDczMzE1NDA3MTIyZDhjM2VlNzZjYWI5ZDgyODJmNjUwMjA2ZDc2NjQ1YWE0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.nx6XqEg7UbvvllFvqBTAenT9mtxuDsYWUAeNEtCvv9Q"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.cineArte.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=js"/>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonWeb url={"https://cinearte.netlify.app/"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects> */}
+                                {/*<DropDownProjects*/}
+                                {/*    id={"cineArteID"}*/}
+                                {/*    title={<Translator path="projeto.cineArte.title"/>}>*/}
+                                {/*    <SlideShow id={"cineArte"}>*/}
+                                {/*        <SlideItem id={"cineArte"}*/}
+                                {/*                   imgUrl={"https://private-user-images.githubusercontent.com/121266927/428450000-42eb432f-79e6-4ec5-b9cb-7805d0659593.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzODYzMDksIm5iZiI6MTc0MzM4NjAwOSwicGF0aCI6Ii8xMjEyNjY5MjcvNDI4NDUwMDAwLTQyZWI0MzJmLTc5ZTYtNGVjNS1iOWNiLTc4MDVkMDY1OTU5My5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMTUzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iNWYzZjFlNjU5YWU4M2JmNzlhMDFlMDU3YmQ3ZTRmMTQxZDM2ZDhkYzVkMzdmOWU5Yzg0MjAyZmFhMDU3Y2IxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ydWKkPsuYbv4LhXovfjCQ7zSPuHJ03gm5NS24hVH-ik"}/>*/}
+                                {/*        <SlideItem id={"cineArte"}*/}
+                                {/*                   imgUrl={"https://private-user-images.githubusercontent.com/121266927/428450188-1049dd4e-dfeb-4a65-a166-5ab01d7e2e4d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzODYzMDksIm5iZiI6MTc0MzM4NjAwOSwicGF0aCI6Ii8xMjEyNjY5MjcvNDI4NDUwMTg4LTEwNDlkZDRlLWRmZWItNGE2NS1hMTY2LTVhYjAxZDdlMmU0ZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMTUzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04NDEwNzM5NjBkNTcyNDhiY2E0NzM1MGU0MGY1MzA2ZTQ2OGE0ZGJiZWRlNDFkZjMyOTQ5YmNiODE3OGU5MTQwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.mWyECnjkgbXKmbaz0LziprC-sdSDOHLfXWta5lYckDY"}/>*/}
+                                {/*        <SlideItem id={"cineArte"}*/}
+                                {/*                   imgUrl={"https://private-user-images.githubusercontent.com/121266927/428450406-dc68beca-a44a-47b8-b215-20836ef5fd88.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzODYzMDksIm5iZiI6MTc0MzM4NjAwOSwicGF0aCI6Ii8xMjEyNjY5MjcvNDI4NDUwNDA2LWRjNjhiZWNhLWE0NGEtNDdiOC1iMjE1LTIwODM2ZWY1ZmQ4OC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMTUzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMWU2ZmM1ZmQ3M2Y1MGYxYWU5ZDczMzE1NDA3MTIyZDhjM2VlNzZjYWI5ZDgyODJmNjUwMjA2ZDc2NjQ1YWE0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.nx6XqEg7UbvvllFvqBTAenT9mtxuDsYWUAeNEtCvv9Q"}/>*/}
+                                {/*    </SlideShow>*/}
+                                {/*    <p>*/}
+                                {/*        <Translator path="projeto.cineArte.text"/>*/}
+                                {/*    </p>*/}
+                                {/*    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>*/}
+                                {/*        <div>*/}
+                                {/*            <img src="https://skillicons.dev/icons?i=css"/>*/}
+                                {/*            <img src="https://skillicons.dev/icons?i=html"/>*/}
+                                {/*            <img src="https://skillicons.dev/icons?i=js"/>*/}
+                                {/*            <img src="https://skillicons.dev/icons?i=react"/>*/}
+                                {/*        </div>*/}
+                                {/*        <div style={{display: "flex"}}>*/}
+                                {/*            <ButtonWeb url={"https://cinearte.netlify.app/"}/>*/}
+                                {/*        </div>*/}
+                                {/*    </div>*/}
+                                {/*</DropDownProjects>*/}
                                 <DropDownProjects
                                     id={"Goth4GothID"}
                                     title={<Translator path="projeto.Goth4Goth.title"/>}>

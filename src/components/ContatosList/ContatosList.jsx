@@ -1,4 +1,5 @@
 import "./ContatosList.css";
+import img from "../../assets/png/kristine.png";
 
 export const ContatosList = () => {
     return (
@@ -87,6 +88,9 @@ export const ContatosList = () => {
                         c11.774-26.525,20.368-56.72,25.433-89.018c27.947,9.884,50.194,23.262,65.645,39.845c0.075,0.081,0.156,0.147,0.234,0.226
                         C445.675,395.225,423.654,420.978,397.189,441.202z"/>
                 </svg>
+            </a>
+            <a href="https://kristnotes.com/victor" target={"_blank"} className="socialContainer containerFour">
+                <img className="socialImg" width="40" height="40" alt="Minimalist_Purple_Woman_Icon-removebg-preview" src={img}/>
             </a>
         </div>
 

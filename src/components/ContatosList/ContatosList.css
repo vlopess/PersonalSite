@@ -77,6 +77,10 @@
     animation: slide-in-top 0.3s both;
 }
 
+.socialContainer:hover .socialImg {
+    animation: slide-in-top 0.3s both;
+}
+
 @keyframes slide-in-top {
     0% {
         transform: translateY(50px);
