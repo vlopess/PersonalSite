@@ -164,15 +164,15 @@ export const ContentHome = () => {
                                     title={<Translator path="projeto.kristnotes.title"/>}>
                                     <SlideShow id={"kristnotes"}>
                                         <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQHoKZibP5JbBg/feedshare-shrink_2048_1536/B4DZib5cDeGkAo-/0/1754962183062?e=1758153600&v=beta&t=jZSq1jTXUzJXeNIZMKOdDZ-AjFOdLb2oE4VnKVvuYbY"}/>
+                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQHoKZibP5JbBg/feedshare-shrink_2048_1536/B4DZib5cDeGkAo-/0/1754962183062?e=1762992000&v=beta&t=B7h8oDxuRV2uj2h-pKTG2UmnJDlrRrrcVgpq77vZfqQ"}/>
                                         <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQGJzCxrfzviVA/feedshare-shrink_1280/B4DZib5cDfHwAk-/0/1754962183099?e=1758153600&v=beta&t=Ys0TaJSBC01ha7ub1ypU1b6CY0PmIS8QKd45-18wfG4"}/>
+                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQGJzCxrfzviVA/feedshare-shrink_800/B4DZib5cDfHwAg-/0/1754962183080?e=1762992000&v=beta&t=KuYV5WjvjiT_4qNmtWVZ_vSK1vJFeHwDngkZtM2hn2o"}/>
                                         <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQEQJbyrb0FjxA/feedshare-shrink_1280/B4DZib5cD0GsAk-/0/1754962183102?e=1758153600&v=beta&t=WE7ZRXKlU4W6tsMIZvVvNwBt7GuTbkDZV7RjxpofM2M"}/>
+                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQEQJbyrb0FjxA/feedshare-shrink_1280/B4DZib5cD0GsAk-/0/1754962183102?e=1762992000&v=beta&t=sozrU7_O8UXpGCyeIH_Xi4iu0TLO9wuAbF4wmIjIdk8"}/>
                                         <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQEK6gexCail3w/feedshare-shrink_2048_1536/B4DZib5cDUH4Ao-/0/1754962183047?e=1758153600&v=beta&t=N5KM70xlw4fJ0mwwId3_zb7rEbcNhyI_SIXpsAY9SVg"}/>
+                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQEK6gexCail3w/feedshare-shrink_2048_1536/B4DZib5cDUH4Ao-/0/1754962183047?e=1762992000&v=beta&t=mjWOTlbpgsJ127zM_F8FtJEOL-raLRPgSy3jU-H6bGU"}/>
                                         <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQGGz1NeWnueDQ/feedshare-shrink_1280/B4DZib5cDfGkAk-/0/1754962182998?e=1758153600&v=beta&t=4EgYVqo4glYRxpUt76O2VudNgMXJavB94-Ufg13z4us"}/>
+                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQGGz1NeWnueDQ/feedshare-shrink_1280/B4DZib5cDfGkAk-/0/1754962182998?e=1762992000&v=beta&t=-Yysg_3qbweb9M1DFfVhon4qxMHSmI5w7nF1r5RinXU"}/>
                                     </SlideShow>
                                     <p>
                                         <Translator path="projeto.kristnotes.text"/>
@@ -186,7 +186,8 @@ export const ContentHome = () => {
                                             <img src="https://skillicons.dev/icons?i=supabase"/>
                                         </div>
                                         <div style={{display: "flex"}}>
-                                        <ButtonWeb url={"https://kristnotes.com/"}/>
+                                            <ButtonGithub url={"https://github.com/vlopess/KristNotes"}/>
+                                            <ButtonWeb url={"https://kristnotes.com/"}/>
                                         </div>
                                     </div>
                                 </DropDownProjects>
