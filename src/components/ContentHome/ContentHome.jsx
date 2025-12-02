@@ -160,6 +160,29 @@ export const ContentHome = () => {
                                     height: "100%"
                                 }}>
                                 <DropDownProjects
+                                    id={"pixelguessID"}
+                                    title={<Translator path="projeto.pixelguess.title"/>}>
+                                    <SlideShow id={"pixelguess"}>
+                                        <SlideItem id={"pixelguess"}
+                                                   imgUrl={"https://images2.imgbox.com/92/03/pJEPtykc_o.jpeg"}/>
+                                    </SlideShow>
+                                    <p>
+                                        <Translator path="projeto.pixelguess.text"/>
+                                    </p>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
+                                        <div>
+                                            <img src="https://skillicons.dev/icons?i=css"/>
+                                            <img src="https://skillicons.dev/icons?i=html"/>
+                                            <img src="https://skillicons.dev/icons?i=js"/>
+                                            <img src="https://skillicons.dev/icons?i=react"/>
+                                        </div>
+                                        <div style={{display: "flex"}}>
+                                            <ButtonGithub url={"https://github.com/vlopess/PixelGuess"}/>
+                                            <ButtonWeb url={"https://pixelguess.vlopesdev.me/"}/>
+                                        </div>
+                                    </div>
+                                </DropDownProjects>
+                                <DropDownProjects
                                     id={"kristnotesID"}
                                     title={<Translator path="projeto.kristnotes.title"/>}>
                                     <SlideShow id={"kristnotes"}>
