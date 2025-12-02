@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto : {
+            pixelguess : {
+                title : 'PixelGuess',
+                text : 'PixelGuess é um jogo de adivinhação visual em que o jogador tenta identificar uma imagem enquanto ela gradualmente deixa de ser pixelizada.'
+            },
             kristnotes : {
                 title : 'KristNotes',
                 text : 'Um app open-source focada em anotações compartilhadas, criada para facilitar a colaboração e o fluxo de ideias entre estudantes ou qualquer pessoa que quer criar e organizar conhecimento de forma conjunta.'
