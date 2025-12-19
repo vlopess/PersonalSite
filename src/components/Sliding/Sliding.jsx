@@ -245,6 +245,31 @@ export const Sliding = () => {
                             </div>
                         </div>
                     </button>
+
+                    <button className="button-sliding">
+                        <div className={"box"} style={{color: "black"}}>
+                            <img className="img" src="https://skillicons.dev/icons?i=arch"/>
+                            <div className="textBox">
+                                <p className="text head">Arch</p>
+                            </div>
+                        </div>
+                    </button>
+                    <button className="button-sliding">
+                        <div className={"box"} style={{color: "black"}}>
+                            <img className="img" src="https://skillicons.dev/icons?i=deno"/>
+                            <div className="textBox">
+                                <p className="text head">Deno</p>
+                            </div>
+                        </div>
+                    </button>
+                    <button className="button-sliding">
+                        <div className={"box"} style={{color: "black"}}>
+                            <img className="img" src="https://skillicons.dev/icons?i=obsidian"/>
+                            <div className="textBox">
+                                <p className="text head">Obsidian</p>
+                            </div>
+                        </div>
+                    </button>
                 </div>
                 {/*<-- Duplicação para loop contínuo -->*/}
                 <div className="emojis">
@@ -485,6 +510,30 @@ export const Sliding = () => {
                             <img className="img" src="https://skillicons.dev/icons?i=git"/>
                             <div className="textBox">
                                 <p className="text head">Git</p>
+                            </div>
+                        </div>
+                    </button>
+                    <button className="button-sliding">
+                        <div className={"box"} style={{color: "black"}}>
+                            <img className="img" src="https://skillicons.dev/icons?i=arch"/>
+                            <div className="textBox">
+                                <p className="text head">Arch</p>
+                            </div>
+                        </div>
+                    </button>
+                    <button className="button-sliding">
+                        <div className={"box"} style={{color: "black"}}>
+                            <img className="img" src="https://skillicons.dev/icons?i=deno"/>
+                            <div className="textBox">
+                                <p className="text head">Deno</p>
+                            </div>
+                        </div>
+                    </button>
+                    <button className="button-sliding">
+                        <div className={"box"} style={{color: "black"}}>
+                            <img className="img" src="https://skillicons.dev/icons?i=obsidian"/>
+                            <div className="textBox">
+                                <p className="text head">Obsidian</p>
                             </div>
                         </div>
                     </button>

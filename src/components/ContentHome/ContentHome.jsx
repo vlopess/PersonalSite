@@ -64,7 +64,7 @@ export const ContentHome = () => {
                     justifyContent: "space-around",
                     width: "55vw"
                 }}>
-                    <div style={{textAlign: "start"}}>
+                    <div style={{textAlign: "start", zIndex: '10'}}>
                         <h1><span><Translator path="home.hello"/></span><br/><Translator path="home.whoIam"/>
                             <div className={"wrapper"}>
                                 <span> Mobile </span>
@@ -79,8 +79,9 @@ export const ContentHome = () => {
                         }}>Victor Lopes | <Translator path="home.dev"/> Full-Stack</p>
                         <p className={"btn-shine"}><Translator path="home.welcome"/></p>
                     </div>
-                    <div className={"m2"}>
-                        <img className={'meImg'} src={Me} alt={''}/>
+                    <div className={'hero-image-wrapper'}>
+                        <div className={"glow-background"}></div>
+                        <img className={'hero-image'} src={Me} alt={'Victor Lopes illustration'}/>
                     </div>
                 </section>
                 <div

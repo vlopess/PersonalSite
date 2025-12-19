@@ -259,3 +259,20 @@
     }
 }
 
+
+.hero-image {
+    height: 70%;
+
+    mask-image:
+            linear-gradient(to top,    transparent, black 0%, black 80%, transparent),
+            linear-gradient(to right,  transparent, black 0%, black 70%, transparent),
+            linear-gradient(to top,  transparent, black 10%, black 90%, transparent),
+            linear-gradient(to left,  transparent, black 0%, black 90%, transparent);
+    mask-composite: intersect;
+}
+
+.hero-image-wrapper {
+    position: relative;
+}
+
+

@@ -23,7 +23,7 @@ export const MostTech = () => {
                         <span className="title">Javascript (React)</span>
                         <div className="skill-bar">
                       <span className="skill-per js">
-                        <span className="tooltip">24%</span>
+                        <span className="tooltip">29%</span>
                       </span>
                         </div>
                     </div>
@@ -34,7 +34,7 @@ export const MostTech = () => {
                         <span className="title">Java (Spring Boot)</span>
                         <div className="skill-bar">
                         <span className="skill-per java">
-                            <span className="tooltip">28%</span>
+                            <span className="tooltip">23%</span>
                         </span>
                         </div>
                     </div>
