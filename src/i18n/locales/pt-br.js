@@ -23,7 +23,7 @@ export default {
         aboutMe : {
             bio : {
                 title : 'Bio',
-                text : 'Olá! Me chamo Victor, sou apaixonado por programação. Tenho 2 anos de experiência em desenvolvimento de software, com o foco em desenvolmento mobile. Minha jornada começou com Flutter e Python, além disso, no ambiente profissional, desenvolvo com .NET. Tenho interesse em Spring Boot e React, trabalhando em projetos pessoais. Quando não estou programando, gosto de assistir filmes. ',
+                text : 'Olá! Me chamo Victor, sou apaixonado por programação. Tenho cerca de 3 anos de experiência em desenvolvimento de software, com o foco em desenvolmento mobile. Minha jornada começou com Flutter e Python, além disso, no ambiente profissional, desenvolvo com .NET. Tenho interesse em Spring Boot e React, trabalhando em projetos pessoais. Quando não estou programando, gosto de assistir filmes. ',
                 cv : 'Confira o meu CV.',
                 cv_language: 'resume_pt.pdf'
             },
@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto : {
+            pixelguess : {
+                title : 'PixelGuess',
+                text : 'PixelGuess é um jogo de adivinhação visual em que o jogador tenta identificar uma imagem enquanto ela gradualmente deixa de ser pixelizada.'
+            },
             kristnotes : {
                 title : 'KristNotes',
                 text : 'Um app open-source focada em anotações compartilhadas, criada para facilitar a colaboração e o fluxo de ideias entre estudantes ou qualquer pessoa que quer criar e organizar conhecimento de forma conjunta.'
