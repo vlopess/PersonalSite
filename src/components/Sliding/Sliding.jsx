@@ -270,6 +270,15 @@ export const Sliding = () => {
                             </div>
                         </div>
                     </button>
+
+                    <button className="button-sliding">
+                        <div className={"box"} style={{color: "black"}}>
+                            <img className="img" src="https://skillicons.dev/icons?i=netlify"/>
+                            <div className="textBox">
+                                <p className="text head">Netlify</p>
+                            </div>
+                        </div>
+                    </button>
                 </div>
                 {/*<-- Duplicação para loop contínuo -->*/}
                 <div className="emojis">
@@ -537,6 +546,15 @@ export const Sliding = () => {
                             </div>
                         </div>
                     </button>
+                    <button className="button-sliding">
+                        <div className={"box"} style={{color: "black"}}>
+                            <img className="img" src="https://skillicons.dev/icons?i=netlify"/>
+                            <div className="textBox">
+                                <p className="text head">Netlify</p>
+                            </div>
+                        </div>
+                    </button>
+
                 </div>
 
             </div>
