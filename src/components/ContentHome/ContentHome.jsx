@@ -188,15 +188,15 @@ export const ContentHome = () => {
                                     title={<Translator path="projeto.kristnotes.title"/>}>
                                     <SlideShow id={"kristnotes"}>
                                         <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQHoKZibP5JbBg/feedshare-shrink_2048_1536/B4DZib5cDeGkAo-/0/1754962183062?e=1762992000&v=beta&t=B7h8oDxuRV2uj2h-pKTG2UmnJDlrRrrcVgpq77vZfqQ"}/>
+                                                   imgUrl={"https://github.com/user-attachments/assets/549d6e93-bbc6-4118-855b-8a6ce7298efe"}/>
                                         <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQGJzCxrfzviVA/feedshare-shrink_800/B4DZib5cDfHwAg-/0/1754962183080?e=1762992000&v=beta&t=KuYV5WjvjiT_4qNmtWVZ_vSK1vJFeHwDngkZtM2hn2o"}/>
+                                                   imgUrl={"https://github.com/user-attachments/assets/2e0242f0-6247-4ed7-985b-ca2c3c0fac73"}/>
                                         <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQEQJbyrb0FjxA/feedshare-shrink_1280/B4DZib5cD0GsAk-/0/1754962183102?e=1762992000&v=beta&t=sozrU7_O8UXpGCyeIH_Xi4iu0TLO9wuAbF4wmIjIdk8"}/>
+                                                   imgUrl={"https://github.com/user-attachments/assets/c2e5720b-751c-408c-b7b2-483a1a8882ca"}/>
                                         <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQEK6gexCail3w/feedshare-shrink_2048_1536/B4DZib5cDUH4Ao-/0/1754962183047?e=1762992000&v=beta&t=mjWOTlbpgsJ127zM_F8FtJEOL-raLRPgSy3jU-H6bGU"}/>
+                                                   imgUrl={"https://github.com/user-attachments/assets/b3a8cf82-63df-480f-9d5f-c20dc619b151"}/>
                                         <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://media.licdn.com/dms/image/v2/D4D22AQGGz1NeWnueDQ/feedshare-shrink_1280/B4DZib5cDfGkAk-/0/1754962182998?e=1762992000&v=beta&t=-Yysg_3qbweb9M1DFfVhon4qxMHSmI5w7nF1r5RinXU"}/>
+                                                   imgUrl={"https://github.com/user-attachments/assets/90f564a1-e8e9-4916-bb48-ba4adb8696bf"}/>
                                     </SlideShow>
                                     <p>
                                         <Translator path="projeto.kristnotes.text"/>
