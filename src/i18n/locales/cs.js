@@ -38,7 +38,11 @@ export default {
                 title: 'Dovednosti'
             }
         },
-        projeto: {
+        projeto: {            
+            CVCheck: {
+                title : 'CVCheck',
+                text : 'CVCheck je jednoduchá aplikace pro analýzu životopisů zaměřených na mezinárodní pracovní nabídky (vzdálená práce, USA, Evropa).'
+            },
             languageToday : {
                 title : 'LanguageToday',
                 text : 'LanguageToday je bezplatná vzdělávací webová aplikace, která má pomoci studentům učit se angličtinu a češtinu prostřednictvím strukturovaných lekcí, praktických cvičení a vedení s pomocí umělé inteligence.'
