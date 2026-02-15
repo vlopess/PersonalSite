@@ -43,6 +43,10 @@ export default {
                 title : 'LanguageToday',
                 text : 'LanguageToday es una aplicación web educativa gratuita diseñada para ayudar a los estudiantes a estudiar inglés y checo a través de lecciones estructuradas, ejercicios prácticos y orientación asistida por IA.'
             },
+            pixelguess : {
+                title : 'PixelGuess',
+                text : 'PixelGuess es un juego de adivinanzas visual en el que el jugador intenta identificar una imagen a medida que ésta se vuelve menos pixelada.'
+            },
             kristnotes : {
                 title : 'KristNotes',
                 text : 'Una aplicación de código abierto centrada en notas compartidas, creada para facilitar la colaboración y el flujo de ideas entre estudiantes o cualquier persona que quiera crear y organizar conocimientos en conjunto.'
