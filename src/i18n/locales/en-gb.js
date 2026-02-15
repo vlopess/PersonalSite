@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto: {
+            languageToday : {
+                title : 'LanguageToday',
+                text : 'LanguageToday is a free educational web application designed to help learners study English and Czech through structured lessons, practical exercises, and AI-assisted guidance.'
+            },
             kristnotes : {
                 title : 'KristNotes',
                 text : 'An open-source app focused on shared notes, created to facilitate collaboration and the flow of ideas among students or anyone who wants to create and organize knowledge together.'
