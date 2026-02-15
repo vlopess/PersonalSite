@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto : {
+            languageToday : {
+                title : 'LanguageToday',
+                text : 'LanguageToday é um aplicativo web educacional gratuito desenvolvido para ajudar os alunos a estudar inglês e tcheco por meio de lições estruturadas, exercícios práticos e orientação assistida por inteligência artificial.'
+            },
             pixelguess : {
                 title : 'PixelGuess',
                 text : 'PixelGuess é um jogo de adivinhação visual em que o jogador tenta identificar uma imagem enquanto ela gradualmente deixa de ser pixelizada.'
