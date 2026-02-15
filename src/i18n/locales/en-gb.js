@@ -45,7 +45,7 @@ export default {
             },
             pixelguess : {
                 title : 'PixelGuess',
-                text : 'PixelGuess is a visual guessing game where the player tries to identify an image as it gradually becomes less pixelated..'
+                text : 'PixelGuess is a visual guessing game where the player tries to identify an image as it gradually becomes less pixelated.'
             },
             kristnotes : {
                 title : 'KristNotes',
