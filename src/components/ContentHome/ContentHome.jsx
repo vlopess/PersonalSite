@@ -161,6 +161,33 @@ export const ContentHome = () => {
                                     height: "100%"
                                 }}>
                                 <DropDownProjects
+                                    id={"languageTodayID"}
+                                    title={<Translator path="projeto.languageToday.title"/>}>
+                                    <SlideShow id={"languageToday"}>
+                                        <SlideItem id={"languageToday"} imgUrl={"https://github.com/vlopess/LanguageToday/blob/main/src/assets/Catharina.png?raw=true"}/>
+                                        <SlideItem id={"languageToday"} imgUrl={"https://github.com/vlopess/LanguageToday/blob/main/src/assets/slide1.png?raw=true"}/>
+                                        <SlideItem id={"languageToday"} imgUrl={"https://github.com/vlopess/LanguageToday/blob/main/src/assets/slide2.png?raw=true"}/>
+                                        <SlideItem id={"languageToday"} imgUrl={"https://github.com/vlopess/LanguageToday/blob/main/src/assets/slide3.png?raw=true"}/>
+                                    </SlideShow>
+                                    <p>
+                                        <Translator path="projeto.languageToday.text"/>
+                                    </p>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
+                                        <div>
+                                            <img src="https://skillicons.dev/icons?i=css"/>
+                                            <img src="https://skillicons.dev/icons?i=html"/>
+                                            <img src="https://skillicons.dev/icons?i=js"/>
+                                            <img src="https://skillicons.dev/icons?i=react"/>
+                                            <img src="https://skillicons.dev/icons?i=vite"/>
+                                            <img src="https://skillicons.dev/icons?i=ai"/>
+                                        </div>
+                                        <div style={{display: "flex"}}>
+                                            <ButtonGithub url={"https://github.com/vlopess/LanguageToday"}/>
+                                            <ButtonWeb url={"https://languagetoday.netlify.app/"}/>
+                                        </div>
+                                    </div>
+                                </DropDownProjects>
+                                <DropDownProjects
                                     id={"pixelguessID"}
                                     title={<Translator path="projeto.pixelguess.title"/>}>
                                     <SlideShow id={"pixelguess"}>
@@ -179,7 +206,7 @@ export const ContentHome = () => {
                                         </div>
                                         <div style={{display: "flex"}}>
                                             <ButtonGithub url={"https://github.com/vlopess/PixelGuess"}/>
-                                            <ButtonWeb url={"https://pixelguess.vlopesdev.me/"}/>
+                                            <ButtonWeb url={"https://pixelguess.netlify.app/"}/>
                                         </div>
                                     </div>
                                 </DropDownProjects>
