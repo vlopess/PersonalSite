@@ -43,6 +43,10 @@ export default {
                 title : 'LanguageToday',
                 text : 'LanguageToday je bezplatná vzdělávací webová aplikace, která má pomoci studentům učit se angličtinu a češtinu prostřednictvím strukturovaných lekcí, praktických cvičení a vedení s pomocí umělé inteligence.'
             },
+            pixelguess : {
+                title : 'PixelGuess',
+                text : 'PixelGuess je vizuální hádanková hra, ve které se hráč snaží identifikovat obrázek, který se postupně stává méně pixelovaným.'
+            },
             kristnotes : {
                 title : 'KristNotes',
                 text : 'Open-source aplikace zaměřená na sdílení poznámek, vytvořená pro usnadnění spolupráce a toku nápadů mezi studenty nebo kýmkoli, kdo chce společně vytvářet a organizovat znalosti.'
