@@ -38,7 +38,11 @@ export default {
                 title: 'Skills'
             }
         },
-        projeto: {
+        projeto: {            
+            CVCheck: {
+                title : 'CVCheck',
+                text : 'CVCheck is a simple application for analyzing resumes focused on international job openings (remote, USA, Europe).'
+            },
             languageToday : {
                 title : 'LanguageToday',
                 text : 'LanguageToday is a free educational web application designed to help learners study English and Czech through structured lessons, practical exercises, and AI-assisted guidance.'
