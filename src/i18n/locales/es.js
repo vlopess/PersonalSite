@@ -38,7 +38,11 @@ export default {
                 title: 'Habilidades'
             }
         },
-        projeto: {
+        projeto: {            
+            CVCheck: {
+                title : 'CVCheck',
+                text : 'CVCheck es una sencilla aplicación para analizar currículums enfocada a vacantes internacionales (remotas, USA, Europa).'
+            },
             languageToday : {
                 title : 'LanguageToday',
                 text : 'LanguageToday es una aplicación web educativa gratuita diseñada para ayudar a los estudiantes a estudiar inglés y checo a través de lecciones estructuradas, ejercicios prácticos y orientación asistida por IA.'
