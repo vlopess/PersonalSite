@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto: {
+            languageToday : {
+                title : 'LanguageToday',
+                text : 'LanguageToday es una aplicación web educativa gratuita diseñada para ayudar a los estudiantes a estudiar inglés y checo a través de lecciones estructuradas, ejercicios prácticos y orientación asistida por IA.'
+            },
             kristnotes : {
                 title : 'KristNotes',
                 text : 'Una aplicación de código abierto centrada en notas compartidas, creada para facilitar la colaboración y el flujo de ideas entre estudiantes o cualquier persona que quiera crear y organizar conocimientos en conjunto.'
