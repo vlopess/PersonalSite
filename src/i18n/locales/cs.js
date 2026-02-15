@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto: {
+            languageToday : {
+                title : 'LanguageToday',
+                text : 'LanguageToday je bezplatná vzdělávací webová aplikace, která má pomoci studentům učit se angličtinu a češtinu prostřednictvím strukturovaných lekcí, praktických cvičení a vedení s pomocí umělé inteligence.'
+            },
             kristnotes : {
                 title : 'KristNotes',
                 text : 'Open-source aplikace zaměřená na sdílení poznámek, vytvořená pro usnadnění spolupráce a toku nápadů mezi studenty nebo kýmkoli, kdo chce společně vytvářet a organizovat znalosti.'
