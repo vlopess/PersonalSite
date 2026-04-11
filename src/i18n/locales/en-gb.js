@@ -38,7 +38,19 @@ export default {
                 title: 'Skills'
             }
         },
-        projeto: {
+        projeto: {            
+            CVCheck: {
+                title : 'CVCheck',
+                text : 'CVCheck is a simple application for analyzing resumes focused on international job openings (remote, USA, Europe).'
+            },
+            languageToday : {
+                title : 'LanguageToday',
+                text : 'LanguageToday is a free educational web application designed to help learners study English and Czech through structured lessons, practical exercises, and AI-assisted guidance.'
+            },
+            pixelguess : {
+                title : 'PixelGuess',
+                text : 'PixelGuess is a visual guessing game where the player tries to identify an image as it gradually becomes less pixelated.'
+            },
             kristnotes : {
                 title : 'KristNotes',
                 text : 'An open-source app focused on shared notes, created to facilitate collaboration and the flow of ideas among students or anyone who wants to create and organize knowledge together.'
