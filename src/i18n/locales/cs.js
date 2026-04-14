@@ -38,7 +38,11 @@ export default {
                 title: 'Dovednosti'
             }
         },
-        projeto: {            
+        projeto: {                   
+            Movierace: {    
+                title : 'MovieRace',
+                text : 'MovieRace je jednoduchá webová hra, ve které propojíte dva herce prostřednictvím filmů.'
+            },     
             CVCheck: {
                 title : 'CVCheck',
                 text : 'CVCheck je jednoduchá aplikace pro analýzu životopisů zaměřených na mezinárodní pracovní nabídky (vzdálená práce, USA, Evropa).'
