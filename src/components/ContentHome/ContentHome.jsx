@@ -161,6 +161,31 @@ export const ContentHome = () => {
                                     height: "100%"
                                 }}>
                                 <DropDownProjects
+                                    id={"MovieraceID"}
+                                    title={<Translator path="projeto.Movierace.title"/>}>
+                                    <SlideShow id={"Movierace"}>
+                                        <SlideItem id={"Movierace"} imgUrl={"https://ph-files.imgix.net/1569e00e-4b18-4427-8794-2b8cf29e6641.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=639&h=320&fit=max&frame=1&dpr=2"}/>
+                                        <SlideItem id={"Movierace"} imgUrl={"https://ph-files.imgix.net/507b29fc-f63a-4ff2-a0cd-be452e03175a.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=639&h=320&fit=max&frame=1&dpr=2"}/>
+                                        <SlideItem id={"Movierace"} imgUrl={"https://ph-files.imgix.net/4307b929-87b8-4e27-940c-e7764e1e7e91.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=639&h=320&fit=max&frame=1&dpr=2"}/>
+                                    </SlideShow>
+                                    <p>
+                                        <Translator path="projeto.Movierace.text"/>
+                                    </p>
+                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
+                                        <div>
+                                            <img src="https://skillicons.dev/icons?i=css"/>
+                                            <img src="https://skillicons.dev/icons?i=html"/>
+                                            <img src="https://skillicons.dev/icons?i=js"/>
+                                            <img src="https://skillicons.dev/icons?i=react"/>
+                                            <img src="https://skillicons.dev/icons?i=vite"/>
+                                        </div>
+                                        <div style={{display: "flex"}}>
+                                            <ButtonGithub url={"https://github.com/vlopess/MovieRace"}/>
+                                            <ButtonWeb url={"https://movierace.netlify.app/"}/>
+                                        </div>
+                                    </div>
+                                </DropDownProjects>
+                                <DropDownProjects
                                     id={"CVCheckID"}
                                     title={<Translator path="projeto.CVCheck.title"/>}>
                                     <SlideShow id={"CVCheck"}>
