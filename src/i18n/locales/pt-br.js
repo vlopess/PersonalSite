@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto : {
+            Movierace: {    
+                title : 'MovieRace',
+                text : 'MovieRace é um jogo online simples onde você conecta dois atores através de filmes.'
+            },
             CVCheck: {
                 title : 'CVCheck',
                 text : 'CVCheck é uma aplicação simples para análise de currículos focados em vagas internacionais (remote, EUA, Europa).'
