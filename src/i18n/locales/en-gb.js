@@ -41,7 +41,7 @@ export default {
         projeto: {         
             Movierace: {    
                 title : 'MovieRace',
-                text : 'MovieRace é um jogo online simples onde você conecta dois atores através de filmes.'
+                text : 'MovieRace is a simple web game where you connect two actors through movies.'
             },
             CVCheck: {
                 title : 'CVCheck',
