@@ -1,12 +1,9 @@
 import {Card} from "../Card/Card.jsx";
 import "./Content.css"
-import Lottie from "lottie-react";
-import animationData from '../../assets/lotties/animation_logo.json';
 import {Sliding} from "../Sliding/Sliding.jsx";
 import {MostTech} from "../MostTech/MostTech.jsx";
 import {ContatosList} from "../ContatosList/ContatosList.jsx";
 import {Divider} from "../Divider/Divider.jsx";
-import {DropDownProjects} from "../DropDownProjects/DropDownProjects.jsx";
 import {Article} from "../Article/Article.jsx";
 import ArrowRight from "../../assets/svg/right-arrow.svg"
 import {TimeLine} from "../TimeLine/TimeLine.jsx";
@@ -15,13 +12,27 @@ import {SlideItem} from "../SlideShow/SlideItem/SlideItem.jsx";
 import {ButtonGithub} from "../Button/ButtonGithub.jsx";
 import {ButtonWeb} from "../Button/ButtonWeb.jsx";
 import Translator from "../../i18n/Translator.js";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {NavBar} from "../NavBar/NavBar.jsx";
 import {Footer} from "../Footer/Footer.jsx";
 import Me from "../../assets/png/me.png";
+import {ProjectCard} from "../ProjectCard/ProjectCard.jsx";
 
 export const ContentHome = () => {
+    const [expandedId, setExpandedId] = useState(null);
     const [heightCard, setHeightCard] = useState(0);
+    const cardRefs = useRef({});
+
+    function handleExpand(id) {
+        setExpandedId(id);
+        setTimeout(() => {
+            cardRefs.current[id]?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }, 50);
+    }
+
+    useEffect(() => {
+        handleExpand(expandedId);
+    }, [expandedId]);
 
     useEffect(() => {
         const handleResize = () => {
@@ -153,424 +164,287 @@ export const ContentHome = () => {
                 <section id={"content-projects"} style={{margin: "25px 0", width: "100%"}}>
                     <div style={{display: "flex", flexDirection: "column", width: "100%"}}>
                         <Divider text={<Translator path="divider.projetos"/>}/>
-                        <Card height={800}>
+                        <div style={{
+                            'height': '800px',
+                            'overflow': 'scroll',
+                            'overflowX': 'hidden',
+                            'margin': '50px 0',
+                            'width': '98%'
+                        }}>
                             <div
-                                id={"content-projects-list"}
                                 style={{
-                                    width: "100%",
-                                    height: "100%"
-                                }}>
-                                <DropDownProjects
-                                    id={"MovieraceID"}
-                                    title={<Translator path="projeto.Movierace.title"/>}>
-                                    <SlideShow id={"Movierace"}>
-                                        <SlideItem id={"Movierace"} imgUrl={"https://ph-files.imgix.net/1569e00e-4b18-4427-8794-2b8cf29e6641.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=639&h=320&fit=max&frame=1&dpr=2"}/>
-                                        <SlideItem id={"Movierace"} imgUrl={"https://ph-files.imgix.net/507b29fc-f63a-4ff2-a0cd-be452e03175a.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=639&h=320&fit=max&frame=1&dpr=2"}/>
-                                        <SlideItem id={"Movierace"} imgUrl={"https://ph-files.imgix.net/4307b929-87b8-4e27-940c-e7764e1e7e91.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=639&h=320&fit=max&frame=1&dpr=2"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.Movierace.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=js"/>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                            <img src="https://skillicons.dev/icons?i=vite"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/MovieRace"}/>
-                                            <ButtonWeb url={"https://movierace.netlify.app/"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"CVCheckID"}
-                                    title={<Translator path="projeto.CVCheck.title"/>}>
-                                    <SlideShow id={"CVCheck"}>
-                                        <SlideItem id={"CVCheck"} imgUrl={"https://github.com/vlopess/CVCheck/blob/main/src/assets/slide_1.png?raw=true"}/>
-                                        <SlideItem id={"CVCheck"} imgUrl={"https://github.com/vlopess/CVCheck/blob/main/src/assets/slide_2.png?raw=true"}/>
-                                        <SlideItem id={"CVCheck"} imgUrl={"https://github.com/vlopess/CVCheck/blob/main/src/assets/slide_3.png?raw=true"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.CVCheck.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=js"/>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                            <img src="https://skillicons.dev/icons?i=vite"/>
-                                            <img src="https://skillicons.dev/icons?i=ai"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/CVCheck"}/>
-                                            <ButtonWeb url={"https://cvcheck.netlify.app/"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"languageTodayID"}
-                                    title={<Translator path="projeto.languageToday.title"/>}>
-                                    <SlideShow id={"languageToday"}>
-                                        <SlideItem id={"languageToday"} imgUrl={"https://github.com/vlopess/LanguageToday/blob/main/src/assets/Catharina.png?raw=true"}/>
-                                        <SlideItem id={"languageToday"} imgUrl={"https://github.com/vlopess/LanguageToday/blob/main/src/assets/slide1.png?raw=true"}/>
-                                        <SlideItem id={"languageToday"} imgUrl={"https://github.com/vlopess/LanguageToday/blob/main/src/assets/slide2.png?raw=true"}/>
-                                        <SlideItem id={"languageToday"} imgUrl={"https://github.com/vlopess/LanguageToday/blob/main/src/assets/slide3.png?raw=true"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.languageToday.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=js"/>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                            <img src="https://skillicons.dev/icons?i=vite"/>
-                                            <img src="https://skillicons.dev/icons?i=ai"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/LanguageToday"}/>
-                                            <ButtonWeb url={"https://languagetoday.netlify.app/"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"pixelguessID"}
-                                    title={<Translator path="projeto.pixelguess.title"/>}>
-                                    <SlideShow id={"pixelguess"}>
-                                        <SlideItem id={"pixelguess"}
-                                                   imgUrl={"https://images2.imgbox.com/92/03/pJEPtykc_o.jpeg"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.pixelguess.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=js"/>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/PixelGuess"}/>
-                                            <ButtonWeb url={"https://pixelguess.netlify.app/"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"kristnotesID"}
-                                    title={<Translator path="projeto.kristnotes.title"/>}>
-                                    <SlideShow id={"kristnotes"}>
-                                        <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/549d6e93-bbc6-4118-855b-8a6ce7298efe"}/>
-                                        <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/2e0242f0-6247-4ed7-985b-ca2c3c0fac73"}/>
-                                        <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/c2e5720b-751c-408c-b7b2-483a1a8882ca"}/>
-                                        <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/b3a8cf82-63df-480f-9d5f-c20dc619b151"}/>
-                                        <SlideItem id={"kristnotes"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/90f564a1-e8e9-4916-bb48-ba4adb8696bf"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.kristnotes.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=js"/>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                            <img src="https://skillicons.dev/icons?i=supabase"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/KristNotes"}/>
-                                            <ButtonWeb url={"https://kristnotes.com/"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"nullAcademyHubID"}
-                                    title={<Translator path="projeto.nullAcademyHub.title"/>}>
-                                    <SlideShow id={"nullAcademyHub"}>
-                                        <SlideItem id={"nullAcademyHub"}
-                                                   imgUrl={"https://raw.githubusercontent.com/vlopess/hub.nullacademy/refs/heads/main/src/assets/png/Frame%2030(2).png"}/>
-                                        </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.nullAcademyHub.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=js"/>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                            <img src="https://skillicons.dev/icons?i=dart"/>
-                                            <img src="https://skillicons.dev/icons?i=flutter"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                        <ButtonWeb url={"https://nullacademy.com.br/"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                {/*<DropDownProjects*/}
-                                {/*    id={"cineArteID"}*/}
-                                {/*    title={<Translator path="projeto.cineArte.title"/>}>*/}
-                                {/*    <SlideShow id={"cineArte"}>*/}
-                                {/*        <SlideItem id={"cineArte"}*/}
-                                {/*                   imgUrl={"https://private-user-images.githubusercontent.com/121266927/428450000-42eb432f-79e6-4ec5-b9cb-7805d0659593.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzODYzMDksIm5iZiI6MTc0MzM4NjAwOSwicGF0aCI6Ii8xMjEyNjY5MjcvNDI4NDUwMDAwLTQyZWI0MzJmLTc5ZTYtNGVjNS1iOWNiLTc4MDVkMDY1OTU5My5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMTUzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iNWYzZjFlNjU5YWU4M2JmNzlhMDFlMDU3YmQ3ZTRmMTQxZDM2ZDhkYzVkMzdmOWU5Yzg0MjAyZmFhMDU3Y2IxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ydWKkPsuYbv4LhXovfjCQ7zSPuHJ03gm5NS24hVH-ik"}/>*/}
-                                {/*        <SlideItem id={"cineArte"}*/}
-                                {/*                   imgUrl={"https://private-user-images.githubusercontent.com/121266927/428450188-1049dd4e-dfeb-4a65-a166-5ab01d7e2e4d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzODYzMDksIm5iZiI6MTc0MzM4NjAwOSwicGF0aCI6Ii8xMjEyNjY5MjcvNDI4NDUwMTg4LTEwNDlkZDRlLWRmZWItNGE2NS1hMTY2LTVhYjAxZDdlMmU0ZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMTUzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04NDEwNzM5NjBkNTcyNDhiY2E0NzM1MGU0MGY1MzA2ZTQ2OGE0ZGJiZWRlNDFkZjMyOTQ5YmNiODE3OGU5MTQwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.mWyECnjkgbXKmbaz0LziprC-sdSDOHLfXWta5lYckDY"}/>*/}
-                                {/*        <SlideItem id={"cineArte"}*/}
-                                {/*                   imgUrl={"https://private-user-images.githubusercontent.com/121266927/428450406-dc68beca-a44a-47b8-b215-20836ef5fd88.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMzODYzMDksIm5iZiI6MTc0MzM4NjAwOSwicGF0aCI6Ii8xMjEyNjY5MjcvNDI4NDUwNDA2LWRjNjhiZWNhLWE0NGEtNDdiOC1iMjE1LTIwODM2ZWY1ZmQ4OC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwMTUzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMWU2ZmM1ZmQ3M2Y1MGYxYWU5ZDczMzE1NDA3MTIyZDhjM2VlNzZjYWI5ZDgyODJmNjUwMjA2ZDc2NjQ1YWE0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.nx6XqEg7UbvvllFvqBTAenT9mtxuDsYWUAeNEtCvv9Q"}/>*/}
-                                {/*    </SlideShow>*/}
-                                {/*    <p>*/}
-                                {/*        <Translator path="projeto.cineArte.text"/>*/}
-                                {/*    </p>*/}
-                                {/*    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>*/}
-                                {/*        <div>*/}
-                                {/*            <img src="https://skillicons.dev/icons?i=css"/>*/}
-                                {/*            <img src="https://skillicons.dev/icons?i=html"/>*/}
-                                {/*            <img src="https://skillicons.dev/icons?i=js"/>*/}
-                                {/*            <img src="https://skillicons.dev/icons?i=react"/>*/}
-                                {/*        </div>*/}
-                                {/*        <div style={{display: "flex"}}>*/}
-                                {/*            <ButtonWeb url={"https://cinearte.netlify.app/"}/>*/}
-                                {/*        </div>*/}
-                                {/*    </div>*/}
-                                {/*</DropDownProjects>*/}
-                                <DropDownProjects
-                                    id={"Goth4GothID"}
-                                    title={<Translator path="projeto.Goth4Goth.title"/>}>
-                                    <SlideShow id={"Goth4Goth"}>
-                                        <SlideItem id={"Goth4Goth"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/c74b09b5-ed2a-496f-883b-bc0879426562"}/>
-                                        <SlideItem id={"Goth4Goth"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/b2e8d996-b4b3-418f-8759-8989dfc03fb0"}/>
-                                        <SlideItem id={"Goth4Goth"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/3576b334-e66d-4cf0-a018-6440ebf27812"}/>
-                                        <SlideItem id={"Goth4Goth"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/a9bc0754-b6b3-42d6-8bc5-3cfb712c4049"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.Goth4Goth.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=firebase"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/Goth4Goth"}/>
-                                            <ButtonWeb url={"https://fastidious-dolphin-7ed490.netlify.app/goth4goth"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"YourTasteAroundTheWorldID"}
-                                    title={<Translator path="projeto.YourTaste.title"/>}>
-                                    <SlideShow id={"YourTasteAroundTheWorld"}>
-                                        <SlideItem id={"YourTasteAroundTheWorld"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/cd58c05d-cca1-44c7-b6b7-95cb789c3212"}/>
-                                        <SlideItem id={"YourTasteAroundTheWorld"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/d20feb44-4089-4dbb-9882-d05ab076b931"}/>
-                                        <SlideItem id={"YourTasteAroundTheWorld"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/46ba33cf-3294-498c-a5be-6b68755dd5fe"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.YourTaste.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=vite"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub
-                                                url={"https://github.com/vlopess/Your-Taste-Around-The-World"}/>
-                                            <ButtonWeb url={"https://vlopess.github.io/Your-Taste-Around-The-World/"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"VimTutorialID"}
-                                    title={<Translator path="projeto.VimTutorial.title"/>}>
-                                    <SlideShow id={"VimTutorial"}>
-                                        <SlideItem id={"VimTutorial"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/abb08c97-22ca-41d8-b135-02caa1cdcd42"}/>
-                                        <SlideItem id={"VimTutorial"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/04275731-442a-484f-8389-c267c1c23f15"}/>
-                                        <SlideItem id={"VimTutorial"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/c0a4823d-bd2b-4d48-8315-9a112b01a4a4"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.VimTutorial.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=vite"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=js"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/VimTutorial"}/>
-                                            <ButtonWeb url={"https://vlopess.github.io/VimTutorial/"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"MyMusicTasteID"}
-                                    title={<Translator path="projeto.MyMusicTaste.title"/>}>
-                                    <SlideShow id={"MyMusicTaste"}>
-                                        <SlideItem id={"MyMusicTaste"}
-                                                   videoUrl={"https://github.com/user-attachments/assets/b1fed1ba-ae6e-4456-a3a9-db2ba0c7ec4a"}/>
-                                        <SlideItem id={"MyMusicTaste"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/673dfca3-84ad-4ebb-8e06-ab5eb3a9de91"}/>
-                                        <SlideItem id={"MyMusicTaste"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/179a6579-8e4b-4169-ab52-cd26c1c8174a"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.MyMusicTaste.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=dart"/>
-                                            <img src="https://skillicons.dev/icons?i=flutter"/>
-                                            <img src="https://skillicons.dev/icons?i=firebase"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/MyMusicTaste"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"OlympicsFollowID"}
-                                    title={<Translator path="projeto.Olympics.title"/>}>
-                                    <SlideShow id={"OlympicsFollow"}>
-                                        <SlideItem id={"OlympicsFollow"}
-                                                   imgUrl={"https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/login.png?raw=true"}/>
-                                        <SlideItem id={"OlympicsFollow"}
-                                                   imgUrl={"https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/cadastro.png?raw=true"}/>
-                                        <SlideItem id={"OlympicsFollow"}
-                                                   imgUrl={"https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/landing1.png?raw=true"}/>
-                                        <SlideItem id={"OlympicsFollow"}
-                                                   imgUrl={"https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/landing2.png?raw=true"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.Olympics.text"/>
-                                        <a target={"_blank"} href="https://github.com/sergiocerq"> serjão do react.</a>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=react"/>
-                                            <img src="https://skillicons.dev/icons?i=js"/>
-                                            <img src="https://skillicons.dev/icons?i=idea"/>
-                                            <img src="https://skillicons.dev/icons?i=java"/>
-                                            <img src="https://skillicons.dev/icons?i=spring"/>
-                                            <img src="https://skillicons.dev/icons?i=rabbitmq"/>
-                                            <img src="https://skillicons.dev/icons?i=eclipse"/>
-                                            <img src="https://skillicons.dev/icons?i=postgres"/>
-                                        </div>
-                                        <div>
-                                            <ButtonGithub url={"https://github.com/vlopess/OlymFollow-FrontEnd"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"LeChatID"}
-                                    title={<Translator path="projeto.LeChat.title"/>}>
-                                    <SlideShow id={"LeChat"}>
-                                        <SlideItem id={"LeChat"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/680ca804-9733-4555-9860-0f864e2f75e4"}/>
-                                        <SlideItem id={"LeChat"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/c4bbc72e-29bd-4030-8de9-f58734bca70e"}/>
-                                        <SlideItem id={"LeChat"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/2886ea94-2f6b-405f-92fa-142ff775c6e5"}/>
-                                        <SlideItem id={"LeChat"}
-                                                   imgUrl={"https://github.com/user-attachments/assets/bd1d9950-fba5-4cb6-82ac-e6f508dc396d"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.LeChat.text"/> <a
-                                        href="https://github.com/vlopess/LeChat-in-Java"> terminal com Java</a>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=dart"/>
-                                            <img src="https://skillicons.dev/icons?i=flutter"/>
-                                            <img src="https://skillicons.dev/icons?i=firebase"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/LeChat"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"SudokuID"}
-                                    title={<Translator path="projeto.Sudoku.title"/>}>
-                                    <SlideShow id={"Sudoku"}>
-                                        <SlideItem id={"Sudoku"}
-                                                   imgUrl={"https://raw.githubusercontent.com/sergiocerq/Sudoku/refs/heads/main/image1.png"}/>
-                                        <SlideItem id={"Sudoku"}
-                                                   imgUrl={"https://github.com/sergiocerq/Sudoku/blob/main/image2.png?raw=true"}/>
-                                        <SlideItem id={"Sudoku"}
-                                                   imgUrl={"https://github.com/sergiocerq/Sudoku/blob/main/image3.png?raw=true"}/>
-                                        <SlideItem id={"Sudoku"}
-                                                   imgUrl={"https://github.com/sergiocerq/Sudoku/blob/main/image4.png?raw=true"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.Sudoku.text"/><a target={"_blank"}
-                                                                href="https://github.com/sergiocerq"> sérgio
-                                        cerqueira.</a>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=java"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/Sudoku"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <DropDownProjects
-                                    id={"SimiliarTasteID"}
-                                    title={<Translator path="projeto.SimilarTaste.title"/>}>
-                                    <SlideShow id={"SimiliarTaste"}>
-                                        <SlideItem id={"SimiliarTaste"}
-                                                   imgUrl={"https://github.com/vlopess/SimilarTaste/raw/main/tela_1.gif?raw=true"}/>
-                                    </SlideShow>
-                                    <p>
-                                        <Translator path="projeto.SimilarTaste.text"/>
-                                    </p>
-                                    <div className={"description-project"} style={{display: "flex", justifyContent: "space-between"}}>
-                                        <div>
-                                            <img src="https://skillicons.dev/icons?i=js"/>
-                                            <img src="https://skillicons.dev/icons?i=html"/>
-                                            <img src="https://skillicons.dev/icons?i=css"/>
-                                            <img src="https://skillicons.dev/icons?i=jquery"/>
-                                        </div>
-                                        <div style={{display: "flex"}}>
-                                            <ButtonGithub url={"https://github.com/vlopess/SimilarTaste"}/>
-                                            <ButtonWeb url={"https://vlopess.github.io/SimilarTaste/"}/>
-                                        </div>
-                                    </div>
-                                </DropDownProjects>
-                                <div>=</div>
+                                    display: "grid",
+                                    gridTemplateColumns: "1fr 1fr",
+                                    gridTemplateRows: "auto auto",
+                                    gap: 10,
+                                    margin: "20px 5px",
+                                    width: '100%'
+                                }}
+                            >
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["MovieraceID"] = el)}
+                                    key={"MovieraceID"}
+                                    project={"Movierace"}
+                                    tags={['Web Application', 'Game']}
+                                    thumbnailColor={'#00E054'}
+                                    expanded={expandedId === "MovieraceID"}
+                                    hidden={expandedId !== null && expandedId !== "MovieraceID"}
+                                    onExpand={() => setExpandedId("MovieraceID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/MovieRace'}
+                                    viewUrl={'https://movierace.netlify.app'}
+                                    icons={['css', 'html', 'js', 'react', 'vite']}
+                                    slideImgUrl={[
+                                        'https://ph-files.imgix.net/1569e00e-4b18-4427-8794-2b8cf29e6641.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=639&h=320&fit=max&frame=1&dpr=2',
+                                        'https://ph-files.imgix.net/507b29fc-f63a-4ff2-a0cd-be452e03175a.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=639&h=320&fit=max&frame=1&dpr=2',
+                                        'https://ph-files.imgix.net/4307b929-87b8-4e27-940c-e7764e1e7e91.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=639&h=320&fit=max&frame=1&dpr=2'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["CVCheckID"] = el)}
+                                    key={"CVCheckID"}
+                                    project={"CVCheck"}
+                                    tags={['Web Application', 'Tool']}
+                                    thumbnailColor={'#6540E9'}
+                                    expanded={expandedId === "CVCheckID"}
+                                    hidden={expandedId !== null && expandedId !== "CVCheckID"}
+                                    onExpand={() => setExpandedId("CVCheckID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/CVCheck'}
+                                    viewUrl={'https://cvcheck.netlify.app'}
+                                    icons={['css', 'html', 'js', 'react', 'vite', 'ai']}
+                                    slideImgUrl={[
+                                        'https://github.com/vlopess/CVCheck/blob/main/src/assets/slide_1.png?raw=true',
+                                        'https://github.com/vlopess/CVCheck/blob/main/src/assets/slide_2.png?raw=true',
+                                        'https://github.com/vlopess/CVCheck/blob/main/src/assets/slide_3.png?raw=true'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["languageTodayID"] = el)}
+                                    key={"languageTodayID"}
+                                    project={"languageToday"}
+                                    tags={['Web Application', 'Tool', 'Education']}
+                                    thumbnailColor={'#F4F8FE'}
+                                    expanded={expandedId === "languageTodayID"}
+                                    hidden={expandedId !== null && expandedId !== "languageTodayID"}
+                                    onExpand={() => setExpandedId("languageTodayID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/LanguageToday'}
+                                    viewUrl={'https://languagetoday.netlify.app'}
+                                    icons={['css', 'html', 'js', 'react', 'vite', 'ai']}
+                                    slideImgUrl={[
+                                        'https://github.com/vlopess/LanguageToday/blob/main/src/assets/Catharina.png?raw=true',
+                                        'https://github.com/vlopess/LanguageToday/blob/main/src/assets/slide1.png?raw=true',
+                                        'https://github.com/vlopess/LanguageToday/blob/main/src/assets/slide2.png?raw=true',
+                                        'https://github.com/vlopess/LanguageToday/blob/main/src/assets/slide3.png?raw=true'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["PixelguessID"] = el)}
+                                    key={"PixelguessID"}
+                                    project={"pixelguess"}
+                                    tags={['Web Application', 'Game']}
+                                    thumbnailColor={'#8A7BFF'}
+                                    expanded={expandedId === "pixelguessID"}
+                                    hidden={expandedId !== null && expandedId !== "pixelguessID"}
+                                    onExpand={() => setExpandedId("pixelguessID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/PixelGuess'}
+                                    viewUrl={'https://pixelguess.netlify.app'}
+                                    icons={['css', 'html', 'js', 'react', 'vite']}
+                                    slideImgUrl={[
+                                        'https://images2.imgbox.com/92/03/pJEPtykc_o.jpeg'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["KristnotesID"] = el)}
+                                    key={"KristnotesID"}
+                                    project={"kristnotes"}
+                                    tags={['Web Application', 'Productivity', 'Social']}
+                                    thumbnailColor={'#834C26'}
+                                    expanded={expandedId === "KristnotesID"}
+                                    hidden={expandedId !== null && expandedId !== "KristnotesID"}
+                                    onExpand={() => setExpandedId("KristnotesID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/KristNotes'}
+                                    viewUrl={'https://kristnotes.netlify.app'}
+                                    icons={['css', 'html', 'js', 'react', 'vite', 'supabase']}
+                                    slideImgUrl={[
+                                        'https://github.com/user-attachments/assets/549d6e93-bbc6-4118-855b-8a6ce7298efe',
+                                        'https://github.com/user-attachments/assets/2e0242f0-6247-4ed7-985b-ca2c3c0fac73',
+                                        'https://github.com/user-attachments/assets/c2e5720b-751c-408c-b7b2-483a1a8882ca',
+                                        'https://github.com/user-attachments/assets/b3a8cf82-63df-480f-9d5f-c20dc619b151',
+                                        'https://github.com/user-attachments/assets/90f564a1-e8e9-4916-bb48-ba4adb8696bf'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["NullAcademyHubID"] = el)}
+                                    key={"NullAcademyHubID"}
+                                    project={"nullAcademyHub"}
+                                    tags={['Web Application', 'Education', 'Information']}
+                                    thumbnailColor={'#FCF2E1'}
+                                    expanded={expandedId === "NullAcademyHubID"}
+                                    hidden={expandedId !== null && expandedId !== "NullAcademyHubID"}
+                                    onExpand={() => setExpandedId("NullAcademyHubID")}
+                                    onClose={() => setExpandedId(null)}
+                                    viewUrl={'https://nullacademyhub.netlify.app'}
+                                    icons={['css', 'html', 'js', 'react', 'vite', 'dart', 'flutter']}
+                                    slideImgUrl={[
+                                        'https://raw.githubusercontent.com/vlopess/hub.nullacademy/refs/heads/main/src/assets/png/Frame%2030(2).png'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["Goth4GothID"] = el)}
+                                    key={"Goth4GothID"}
+                                    project={"Goth4Goth"}
+                                    tags={['Web Application', 'Chat Application', 'Social']}
+                                    thumbnailColor={'#343541'}
+                                    expanded={expandedId === "Goth4GothID"}
+                                    hidden={expandedId !== null && expandedId !== "Goth4GothID"}
+                                    onExpand={() => setExpandedId("Goth4GothID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/Goth4Goth'}
+                                    viewUrl={'https://fastidious-dolphin-7ed490.netlify.app/goth4goth'}
+                                    icons={['css', 'html', 'js', 'react', 'vite', 'firebase']}
+                                    slideImgUrl={[
+                                        'https://github.com/user-attachments/assets/c74b09b5-ed2a-496f-883b-bc0879426562',
+                                        'https://github.com/user-attachments/assets/b2e8d996-b4b3-418f-8759-8989dfc03fb0',
+                                        'https://github.com/user-attachments/assets/3576b334-e66d-4cf0-a018-6440ebf27812',
+                                        'https://github.com/user-attachments/assets/a9bc0754-b6b3-42d6-8bc5-3cfb712c4049'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["YourTasteAroundTheWorldID"] = el)}
+                                    key={"YourTasteAroundTheWorldID"}
+                                    project={"YourTaste"}
+                                    tags={['Web Application', 'Education']}
+                                    thumbnailColor={'#05B437'}
+                                    expanded={expandedId === "YourTasteAroundTheWorldID"}
+                                    hidden={expandedId !== null && expandedId !== "YourTasteAroundTheWorldID"}
+                                    onExpand={() => setExpandedId("YourTasteAroundTheWorldID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/Your-Taste-Around-The-World'}
+                                    viewUrl={'https://vlopess.github.io/Your-Taste-Around-The-World'}
+                                    icons={['css', 'html', 'js', 'react', 'vite']}
+                                    slideImgUrl={[
+                                        'https://github.com/user-attachments/assets/cd58c05d-cca1-44c7-b6b7-95cb789c3212',
+                                        'https://github.com/user-attachments/assets/d20feb44-4089-4dbb-9882-d05ab076b931',
+                                        'https://github.com/user-attachments/assets/46ba33cf-3294-498c-a5be-6b68755dd5fe'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["VimTutorialID"] = el)}
+                                    key={"VimTutorialID"}
+                                    project={"VimTutorial"}
+                                    tags={['Web Application', 'Education']}
+                                    thumbnailColor={'#05B437'}
+                                    expanded={expandedId === "VimTutorialID"}
+                                    hidden={expandedId !== null && expandedId !== "VimTutorialID"}
+                                    onExpand={() => setExpandedId("VimTutorialID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/VimTutorial'}
+                                    viewUrl={'https://vlopess.github.io/VimTutorial'}
+                                    icons={['css', 'html', 'js', 'react', 'vite']}
+                                    slideImgUrl={[
+                                        'https://github.com/user-attachments/assets/abb08c97-22ca-41d8-b135-02caa1cdcd42',
+                                        'https://github.com/user-attachments/assets/04275731-442a-484f-8389-c267c1c23f15',
+                                        'https://github.com/user-attachments/assets/c0a4823d-bd2b-4d48-8315-9a112b01a4a4'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["MyMusicTasteID"] = el)}
+                                    key={"MyMusicTasteID"}
+                                    project={"MyMusicTaste"}
+                                    tags={['Mobile Application', 'Data Visualisation']}
+                                    thumbnailColor={'#5B191B'}
+                                    expanded={expandedId === "MyMusicTasteID"}
+                                    hidden={expandedId !== null && expandedId !== "MyMusicTasteID"}
+                                    onExpand={() => setExpandedId("MyMusicTasteID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/MyMusicTaste'}
+                                    icons={['dart', 'flutter', 'firebase']}
+                                    slideImgUrl={[
+                                        'https://github.com/user-attachments/assets/b1fed1ba-ae6e-4456-a3a9-db2ba0c7ec4a',
+                                        'https://github.com/user-attachments/assets/673dfca3-84ad-4ebb-8e06-ab5eb3a9de91',
+                                        'https://github.com/user-attachments/assets/179a6579-8e4b-4169-ab52-cd26c1c8174a'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["OlympicsID"] = el)}
+                                    key={"OlympicsID"}
+                                    project={"Olympics"}
+                                    tags={['Web Application']}
+                                    thumbnailColor={'#FFCD5C'}
+                                    expanded={expandedId === "OlympicsID"}
+                                    hidden={expandedId !== null && expandedId !== "OlympicsID"}
+                                    onExpand={() => setExpandedId("OlympicsID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/OlymFollow-FrontEnd'}
+                                    icons={['css', 'html', 'js', 'react', 'idea', 'java', 'spring', 'rabbitmq', 'eclipse', 'postgres']}
+                                    slideImgUrl={[
+                                        'https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/login.png?raw=',
+                                        'https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/cadastro.png?raw=true',
+                                        'https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/landing1.png?raw=true',
+                                        'https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/landing2.png?raw=true'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["LeChatID"] = el)}
+                                    key={"LeChatID"}
+                                    project={"LeChat"}
+                                    tags={['Mobile Application', 'Chat Application']}
+                                    thumbnailColor={'#154262'}
+                                    expanded={expandedId === "LeChatID"}
+                                    hidden={expandedId !== null && expandedId !== "LeChatID"}
+                                    onExpand={() => setExpandedId("LeChatID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/LeChat'}
+                                    icons={['dart', 'flutter', 'firebase']}
+                                    slideImgUrl={[
+                                        'https://github.com/user-attachments/assets/680ca804-9733-4555-9860-0f864e2f75e4',
+                                        'https://github.com/user-attachments/assets/c4bbc72e-29bd-4030-8de9-f58734bca70e',
+                                        'https://github.com/user-attachments/assets/2886ea94-2f6b-405f-92fa-142ff775c6e5',
+                                        'https://github.com/user-attachments/assets/bd1d9950-fba5-4cb6-82ac-e6f508dc396d'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["SudokuID"] = el)}
+                                    key={"SudokuID"}
+                                    project={"Sudoku"}
+                                    tags={['Desktop Application', 'Game']}
+                                    thumbnailColor={'#222222'}
+                                    expanded={expandedId === "SudokuID"}
+                                    hidden={expandedId !== null && expandedId !== "SudokuID"}
+                                    onExpand={() => setExpandedId("SudokuID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/Sudoku'}
+                                    icons={['java']}
+                                    slideImgUrl={[
+                                        'https://raw.githubusercontent.com/sergiocerq/Sudoku/refs/heads/main/image1.png',
+                                        'https://github.com/sergiocerq/Sudoku/blob/main/image2.png?raw=true',
+                                        'https://github.com/sergiocerq/Sudoku/blob/main/image3.png?raw=true',
+                                        'https://github.com/sergiocerq/Sudoku/blob/main/image4.png?raw=true'
+                                    ]}
+                                />
+                                <ProjectCard
+                                    cardRef={(el) => (cardRefs.current["SimilarTasteID"] = el)}
+                                    key={"SimilarTasteID"}
+                                    project={"SimilarTaste"}
+                                    tags={['Web Application']}
+                                    thumbnailColor={'#471F7A'}
+                                    expanded={expandedId === "SimilarTasteID"}
+                                    hidden={expandedId !== null && expandedId !== "SimilarTasteID"}
+                                    onExpand={() => setExpandedId("SimilarTasteID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/SimilarTaste'}
+                                    viewUrl={'https://vlopess.github.io/SimilarTaste'}
+                                    icons={['css', 'html', 'js', 'jquery']}
+                                    slideImgUrl={[
+                                        'https://github.com/vlopess/SimilarTaste/raw/main/tela_1.gif?raw=true'
+                                    ]}
+                                />
                             </div>
-                        </Card>
+                        </div>
                         <Divider text={<Translator path="divider.contato"/>}/>
                         <Card id={"content-contacts"} height={100}>
                             <ContatosList/>
