@@ -18,7 +18,6 @@ export const ProjectCard = ({ tags, project, expanded, hidden, onExpand, onClose
                 cursor: expanded ? "default" : "pointer",
                 position: "relative",
                 gridColumn: expanded ? "1 / -1" : undefined,
-                gridRow: expanded ? "1 / 3" : undefined,
                 opacity: hidden ? 0 : 1,
                 transform: hidden ? "scale(0.96)" : "scale(1)",
                 pointerEvents: hidden ? "none" : "auto",
@@ -128,7 +127,7 @@ export const ProjectCard = ({ tags, project, expanded, hidden, onExpand, onClose
                         style={{
                             marginTop: 20,
                             display: "grid",
-                            gridTemplateColumns: "1fr 1fr 1fr",
+                            gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
                             gap: 10,
                             animation: "fadeUp 0.4s ease 0.15s both",
                         }}
@@ -159,7 +158,7 @@ export const ProjectCard = ({ tags, project, expanded, hidden, onExpand, onClose
                                 >
                                     {d.label}
                                 </div>
-                                <div style={{fontSize: 14, color: "#c8c5c0"}}>{d.value}</div>
+                                <div style={{fontSize: 14, color: "#c8c5c0", display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 6}}>{d.value}</div>
                             </div>
                         ))}
                     </div>
@@ -199,4 +198,4 @@ export const ProjectCard = ({ tags, project, expanded, hidden, onExpand, onClose
     );
 }
 
-const parseIcons = (icons) => icons.map((i) => <img src={`https://skillicons.dev/icons?i=${i}`} height={40} />);
+const parseIcons = (icons) => icons.map((i) => <img src={`https://skillicons.dev/icons?i=${i}`} height={40} style={{maxWidth: "100%", margin: "4px"}}/>);

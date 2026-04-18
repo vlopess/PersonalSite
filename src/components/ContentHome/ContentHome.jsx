@@ -7,10 +7,6 @@ import {Divider} from "../Divider/Divider.jsx";
 import {Article} from "../Article/Article.jsx";
 import ArrowRight from "../../assets/svg/right-arrow.svg"
 import {TimeLine} from "../TimeLine/TimeLine.jsx";
-import {SlideShow} from "../SlideShow/SlideShow.jsx";
-import {SlideItem} from "../SlideShow/SlideItem/SlideItem.jsx";
-import {ButtonGithub} from "../Button/ButtonGithub.jsx";
-import {ButtonWeb} from "../Button/ButtonWeb.jsx";
 import Translator from "../../i18n/Translator.js";
 import {useEffect, useRef, useState} from "react";
 import {NavBar} from "../NavBar/NavBar.jsx";
@@ -174,11 +170,10 @@ export const ContentHome = () => {
                             <div
                                 style={{
                                     display: "grid",
-                                    gridTemplateColumns: "1fr 1fr",
-                                    gridTemplateRows: "auto auto",
+                                    gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
                                     gap: 10,
                                     margin: "20px 5px",
-                                    width: '100%'
+                                    width: "100%",
                                 }}
                             >
                                 <ProjectCard
