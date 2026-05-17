@@ -13,6 +13,7 @@ import {NavBar} from "../NavBar/NavBar.jsx";
 import {Footer} from "../Footer/Footer.jsx";
 import Me from "../../assets/png/me.png";
 import {ProjectCard} from "../ProjectCard/ProjectCard.jsx";
+import Loop from "@/components/Loop.jsx";
 
 export const ContentHome = () => {
     const [expandedId, setExpandedId] = useState(null);
@@ -72,14 +73,8 @@ export const ContentHome = () => {
                     width: "55vw"
                 }}>
                     <div style={{textAlign: "start", zIndex: '10'}}>
-                        <h1><span><Translator path="home.hello"/></span><br/><Translator path="home.whoIam"/>
-                            <div className={"wrapper"}>
-                                <span> Mobile </span>
-                                <span> Front-End </span>
-                                <span> Back-End </span>
-                            </div>
-                            <br/>
-                            <Translator path="home.dev"/>
+                        <h1 style={{width: '500px'}}>
+                            <span><Translator path="home.hello"/></span><br/><Translator path="home.whoIam"/><Loop /><Translator path="home.dev"/>
                         </h1>
                         <p style={{
                             color: "grey"
@@ -379,8 +374,8 @@ export const ContentHome = () => {
                                     slideImgUrl={[
                                         'https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/login.png?raw=',
                                         'https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/cadastro.png?raw=true',
-                                        'https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/landing1.png?raw=true',
-                                        'https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/landing2.png?raw=true'
+                                        'https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/landing1.png?raw=',
+                                        'https://github.com/vlopess/OlymFollow-FrontEnd/blob/main/olymfollow-front/src/assets/screenshots/landing2.png?raw='
                                     ]}
                                 />
                                 <ProjectCard

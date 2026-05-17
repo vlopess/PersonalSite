@@ -4,198 +4,108 @@ import {ButtonGithub} from "../Button/ButtonGithub.jsx";
 import {ButtonWeb} from "../Button/ButtonWeb.jsx";
 import {SlideShow} from "../SlideShow/SlideShow.jsx";
 import {SlideItem} from "../SlideShow/SlideItem/SlideItem.jsx";
+import React from "react";
 
 export const ProjectCard = ({ tags, project, expanded, hidden, onExpand, onClose, thumbnailColor, icons, viewUrl, githubUrl, slideImgUrl, cardRef}) => {
-    return (
-        <div
-            ref={cardRef}
-            onClick={!expanded ? onExpand : undefined}
-            style={{
-                background: "#1c1c1a",
-                borderRadius: 10,
-                border: `1px solid ${expanded ? "#1677ff" : "#242422"}`,
-                overflow: "hidden",
-                cursor: expanded ? "default" : "pointer",
-                position: "relative",
-                gridColumn: expanded ? "1 / -1" : undefined,
-                opacity: hidden ? 0 : 1,
-                transform: hidden ? "scale(0.96)" : "scale(1)",
-                pointerEvents: hidden ? "none" : "auto",
-                transition:
-                    "opacity 0.3s ease, transform 0.3s ease, border-color 0.2s ease, grid-column 0.4s ease",
-                zIndex: expanded ? 10 : 1,
-                width: '98%'
-            }}
-        >
-            {/* Thumbnail */}
-            <div
-                style={{
-                    width: "100%",
-                    height: expanded ? 350 : 130,
-                    overflow: "hidden",
-                    transition: "height 0.45s cubic-bezier(0.4,0,0.2,1)",
-                    flexShrink: 0,
-                }}
-            >
+  const hoverRef = React.useRef(null);
 
-            {!expanded && (
-                <div style={{
-                    backgroundColor: `${thumbnailColor}`,
-                    width: '100%',
-                    height: '100%'
-                }}></div>
-            )}
-            {expanded && (
-                <>
-                    <div style={{height:'50px'}}></div>
-                    <SlideShow id={project}>
-                        {slideImgUrl.map((url) => <SlideItem id={project} imgUrl={url}/>)}
-                    </SlideShow>
-                </>
-            )}
+  return (
+    <div
+      ref={cardRef}
+      onClick={!expanded ? onExpand : undefined}
+      onMouseEnter={() => { if (!expanded) hoverRef.current?.classList.add('hovered'); }}
+      onMouseLeave={() => { if (!expanded) hoverRef.current?.classList.remove('hovered'); }}
+      className={`project-card ${expanded ? 'expanded' : ''} ${hidden ? 'hidden' : ''}`}
+      style={{ '--thumbnail-color': thumbnailColor }}
+    >
+      {/* Thumbnail with enhanced styling */}
+      <div
+        ref={hoverRef}
+        className="card-thumbnail"
+      >
+        {!expanded && (
+          <div className="project-icon">
+            {/* Project icon based on type */}
+            {project === "Movierace" && <div className="movierace" />}
+            {project === "CVCheck" && <div className="cvcheck" />}
+            {project === "languageToday" && <div className="languagetoday" />}
+            {project === "pixelguess" && <div className="pixelguess" />}
+            {project === "kristnotes" && <div className="kristnotes" />}
+            {project === "nullAcademyHub" && <div className="nullacademyhub" />}
+            {project === "Goth4Goth" && <div className="goth4goth" />}
+          </div>
+        )}
+        {expanded && (
+          <>
+            <div className="slideshow-container">
+              <SlideShow id={project}>
+                {slideImgUrl.map((url) => <SlideItem id={project} imgUrl={url} key={url}/>)}
+              </SlideShow>
             </div>
+          </>
+        )}
+      </div>
 
-            {/* Body */}
-            <div style={{padding: expanded ? "20px 24px 24px" : "12px 14px 14px", transition: "padding 0.35s ease" }}>
-                {/* Header */}
-                <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 5 }}>
-                    <div
-                        style={{
-                            width: 14,
-                            height: 14,
-                            background: "#2e2e2c",
-                            borderRadius: 3,
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            flexShrink: 0,
-                        }}
-                    >
-                        <div style={{ width: 6, height: 5, background: "#666660", borderRadius: 1 }} />
-                    </div>
-                    <span
-                        style={{
-                            fontFamily: "'Syne', sans-serif",
-                            fontSize: expanded ? 18 : 13.5,
-                            fontWeight: 600,
-                            color: "#e8e5e0",
-                            letterSpacing: -0.2,
-                            transition: "font-size 0.35s ease",
-                        }}
-                    >
+      {/* Body with improved spacing and typography */}
+      <div className="card-content">
+        {/* Header with improved typography */}
+        <div className="card-header">
+          <div className="icon-bg">
+            <div className="icon-dot" />
+          </div>
+          <span className="title">
             <Translator path={`projeto.${project}.title`}/>
           </span>
-                </div>
+        </div>
 
-                <p
-                    style={{
-                        fontSize: expanded ? 16 : 14,
-                        color: "#888882",
-                        marginBottom: 10,
-                        fontWeight: 300,
-                        lineHeight: 1.45,
-                        textAlign: 'start',
-                        transition: "font-size 0.35s ease",
-                    }}
-                >
-                    <Translator path={`projeto.${project}.text`}/>
-                </p>
+        <p className="card-description">
+          <Translator path={`projeto.${project}.text`}/>
+        </p>
 
-                {/* Tags */}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-                    {tags.map((t) => (
-                        <span
-                            key={t}
-                            style={{
-                                fontSize: expanded ? 12 : 10.5,
-                                color: "#888882",
-                                background: "#252523",
-                                border: "1px solid #2e2e2c",
-                                borderRadius: 4,
-                                padding: expanded ? "4px 10px" : "3px 8px",
-                                transition: "font-size 0.35s ease, padding 0.35s ease",
-                            }}
-                        >
+        {/* Tags with improved styling */}
+        <div className="card-tags">
+          {tags.map((t) => (
+            <span key={t} className="tag">
               {t}
             </span>
-                    ))}
-                </div>
-
-                {/* Expanded Details */}
-                {expanded && (
-                    <div
-                        style={{
-                            marginTop: 20,
-                            display: "grid",
-                            gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
-                            gap: 10,
-                            animation: "fadeUp 0.4s ease 0.15s both",
-                        }}
-                    >
-                        {[
-                            {label: "Technologies", value: parseIcons(icons)},
-                            {label: "View", value: <ButtonWeb url={githubUrl}/>},
-                            {label: "GithHub", value: <ButtonGithub url={viewUrl}/>},
-                        ].map((d) => (
-                            <div
-                                key={d.label}
-                                style={{
-                                    background: "#141412",
-                                    borderRadius: 8,
-                                    padding: "13px 14px",
-                                    border: "1px solid #242422",
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        fontSize: 10.5,
-                                        color: "#555550",
-                                        textTransform: "uppercase",
-                                        letterSpacing: "0.7px",
-                                        fontWeight: 500,
-                                        marginBottom: 6,
-                                    }}
-                                >
-                                    {d.label}
-                                </div>
-                                <div style={{fontSize: 14, color: "#c8c5c0", display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 6}}>{d.value}</div>
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </div>
-
-            {/* Close button */}
-            {expanded && (
-                <button
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        onClose();
-                    }}
-                    style={{
-                        position: "absolute",
-                        top: 12,
-                        right: 12,
-                        width: 28,
-                        height: 28,
-                        background: "#252523",
-                        border: "1px solid #333330",
-                        borderRadius: "50%",
-                        cursor: "pointer",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: "#aaa",
-                        fontSize: 18,
-                        lineHeight: 1,
-                        zIndex: 20,
-                    }}
-                >
-                    ×
-                </button>
-            )}
+          ))}
         </div>
-    );
-}
+
+        {/* Enhanced Expanded Details */}
+        {expanded && (
+          <div className="card-details">
+            {[
+              {label: "TECHNOLOGIES", value: parseIcons(icons)},
+              {label: "VIEW PROJECT", value: <ButtonWeb url={viewUrl}/>},
+              {label: "SOURCE CODE", value: <ButtonGithub url={githubUrl}/>},
+            ].map((d) => (
+              <div key={d.label} className="detail-item">
+                <div className="detail-label">
+                  {d.label}
+                </div>
+                <div className="detail-value">{d.value}</div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Improved Close button */}
+        {expanded && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onClose();
+            }}
+            className="close-button"
+            onMouseEnter={(e) => e.currentTarget.classList.add('hovered')}
+            onMouseLeave={(e) => e.currentTarget.classList.remove('hovered')}
+          >
+            ×
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const parseIcons = (icons) => icons.map((i) => <img src={`https://skillicons.dev/icons?i=${i}`} height={40} style={{maxWidth: "100%", margin: "4px"}}/>);
