@@ -120,6 +120,8 @@ export const ContentHome = () => {
                                     <h2><Translator path="aboutMe.article.title"/></h2>
                                 </div>
                                 <div style={{height: "10%"}}>
+                                    <Article text={"Software Quality Assurance"}
+                                             link={"https://medium.com/stackademic/software-quality-assurance-1a39e9e928dc"}/>
                                     <Article text={"Architectural Analysis of JUnit"}
                                              link={"https://medium.com/stackademic/architectural-analysis-of-junit-d9472f9bf79b"}/>
                                     <Article text={"Automating Flutter Apps: An Introduction to CI/CD Pipelines"}
