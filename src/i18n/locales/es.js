@@ -38,7 +38,11 @@ export default {
                 title: 'Habilidades'
             }
         },
-        projeto: {        
+        projeto: {
+            DiscoverCountry: {
+                title: 'DiscoverCountry',
+                text: ' Cuestionario educativo sobre banderas y capitales de países de todo el mundo. '
+            },
             Movierace: {    
                 title : 'MovieRace',
                 text : 'MovieRace es un sencillo juego web en el que conectas a dos actores a través de películas.'

@@ -14,11 +14,29 @@ import {Footer} from "../Footer/Footer.jsx";
 import Me from "../../assets/png/me.png";
 import {ProjectCard} from "../ProjectCard/ProjectCard.jsx";
 import Loop from "@/components/Loop.jsx";
+import axios from "axios";
 
 export const ContentHome = () => {
     const [expandedId, setExpandedId] = useState(null);
     const [heightCard, setHeightCard] = useState(0);
     const cardRefs = useRef({});
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        const loadPosts = async () => {
+            const feedUrl = encodeURIComponent(
+                "https://medium.com/feed/@Victorldev"
+            );
+
+            const response = await axios.get(
+                `https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`
+            );
+
+            setPosts(response.data.items);
+        };
+
+        loadPosts();
+    }, []);
 
     function handleExpand(id) {
         setExpandedId(id);
@@ -120,23 +138,12 @@ export const ContentHome = () => {
                                     <h2><Translator path="aboutMe.article.title"/></h2>
                                 </div>
                                 <div style={{height: "10%"}}>
-                                    <Article text={"Architectural Analysis of JUnit"}
-                                             link={"https://medium.com/stackademic/architectural-analysis-of-junit-d9472f9bf79b"}/>
-                                    <Article text={"Automating Flutter Apps: An Introduction to CI/CD Pipelines"}
-                                             link={"https://medium.com/@Victorldev/automating-flutter-apps-an-introduction-to-ci-cd-pipelines-197919d0e886"}/>
-                                    <Article text={"Asynchronous builders in Flutter: Analyzing FutureBuilder and StreamBuilder"}
-                                             link={"https://medium.com/@Victorldev/asynchronous-builders-in-flutter-analyzing-futurebuilder-and-streambuilder-d3f8af3af88a"}/>
-                                    <Article
-                                        text={"Understanding Future and Stream in Dart"}
-                                        link={"https://medium.com/@Victorldev/understanding-future-and-stream-in-dart-cba0842a8470"}/>
-                                    <Article text={"Dynamic Interfaces with Server-Driven UI for Mobile"}
-                                             link={"https://medium.com/@Victorldev/dynamic-interfaces-with-server-driven-ui-for-mobile-bf934b8b3c4f"}/>
-                                    <div style={{margin: "30px 0 5px 0"}}>
+                                    {posts.slice(0, 4).map((post) => (
+                                        <Article text={post.title} link={post.link}/>
+                                    ))}
+                                    <div>
                                         <Article svg={ArrowRight} text={<Translator path="aboutMe.article.more"/>} link={"https://medium.com/@Victorldev"}/>
                                     </div>
-                                    {/*<Article text={"Automação de testes: Testes de Interface do Usuário (UI) — Python, PyTest e Selenium (4/4)"} link={"#"}/>*/}
-                                    {/*<Article text={"Automação de testes: Testes de Interface do Usuário (UI) — Python, PyTest e Selenium (4/4)"} link={"#"}/>*/}
-                                    {/*<Article text={"É possível ler um código binário em ASCII?"} link={"#"}/>*/}
                                 </div>
                             </div>
                         </Card>
@@ -172,6 +179,23 @@ export const ContentHome = () => {
                                 }}
                             >
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/DiscoverCountry/blob/master/src/assets/logo.png?raw=true'}
+                                    cardRef={(el) => (cardRefs.current["DiscoverCountryID"] = el)}
+                                    key={"DiscoverCountryID"}
+                                    project={"DiscoverCountry"}
+                                    tags={['Web Application', 'Game']}
+                                    thumbnailColor={'#00E054'}
+                                    expanded={expandedId === "DiscoverCountryID"}
+                                    hidden={expandedId !== null && expandedId !== "DiscoverCountryID"}
+                                    onExpand={() => setExpandedId("DiscoverCountryID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/DiscoverCountry'}
+                                    viewUrl={'https://discovercountry.netlify.app'}
+                                    icons={['css', 'html', 'js', 'react', 'vite', 'express','jest', 'prisma']}
+                                    slideImgUrl={['']}
+                                />
+                                <ProjectCard
+                                    logoProject={'https://github.com/vlopess/MovieRace/blob/master/src/assets/icon.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["MovieraceID"] = el)}
                                     key={"MovieraceID"}
                                     project={"Movierace"}
@@ -191,6 +215,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/CVCheck/blob/main/src/assets/logo.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["CVCheckID"] = el)}
                                     key={"CVCheckID"}
                                     project={"CVCheck"}
@@ -210,6 +235,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/LanguageToday/blob/main/src/assets/Catharina.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["languageTodayID"] = el)}
                                     key={"languageTodayID"}
                                     project={"languageToday"}
@@ -230,6 +256,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/PixelGuess/blob/main/src/assets/icon.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["PixelguessID"] = el)}
                                     key={"PixelguessID"}
                                     project={"pixelguess"}
@@ -247,6 +274,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/KristNotes/blob/main/src/assets/kristina.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["KristnotesID"] = el)}
                                     key={"KristnotesID"}
                                     project={"kristnotes"}
@@ -268,6 +296,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://raw.githubusercontent.com/vlopess/hub.nullacademy/refs/heads/main/src/assets/png/Frame%2030(2).png'}
                                     cardRef={(el) => (cardRefs.current["NullAcademyHubID"] = el)}
                                     key={"NullAcademyHubID"}
                                     project={"nullAcademyHub"}
@@ -284,6 +313,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/Goth4Goth/blob/main/goth4goth/src/assets/images/bat.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["Goth4GothID"] = el)}
                                     key={"Goth4GothID"}
                                     project={"Goth4Goth"}
@@ -304,6 +334,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/Your-Taste-Around-The-World/blob/master/src/assets/globe.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["YourTasteAroundTheWorldID"] = el)}
                                     key={"YourTasteAroundTheWorldID"}
                                     project={"YourTaste"}
@@ -323,6 +354,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://raw.githubusercontent.com/vlopess/VimTutorial/d79e8df64dc88a323584588649a325b50bda7e18/src/assets/vimlogo.svg'}
                                     cardRef={(el) => (cardRefs.current["VimTutorialID"] = el)}
                                     key={"VimTutorialID"}
                                     project={"VimTutorial"}
@@ -342,6 +374,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/MyMusicTaste/blob/master/assets/png/logo.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["MyMusicTasteID"] = el)}
                                     key={"MyMusicTasteID"}
                                     project={"MyMusicTaste"}
@@ -360,6 +393,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/OlymFollow-FrontEnd/raw/refs/heads/main/olymfollow-front/public/favicon.ico'}
                                     cardRef={(el) => (cardRefs.current["OlympicsID"] = el)}
                                     key={"OlympicsID"}
                                     project={"Olympics"}
@@ -379,6 +413,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/LeChat/blob/master/assets/logo.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["LeChatID"] = el)}
                                     key={"LeChatID"}
                                     project={"LeChat"}
@@ -398,6 +433,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/Sudoku/blob/main/src/images/logo2.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["SudokuID"] = el)}
                                     key={"SudokuID"}
                                     project={"Sudoku"}
@@ -417,6 +453,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
+                                    logoProject={'https://github.com/vlopess/SimilarTaste/blob/main/image/favicon-16x16.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["SimilarTasteID"] = el)}
                                     key={"SimilarTasteID"}
                                     project={"SimilarTaste"}

@@ -1,6 +1,6 @@
 .button-container {
     display: flex;
-    background-color: black;
+    background-color: #1c1e2e;
     align-items: center;
     justify-content: space-around;
     border-radius: 10px;

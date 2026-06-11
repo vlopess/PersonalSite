@@ -38,7 +38,11 @@ export default {
                 title: 'Dovednosti'
             }
         },
-        projeto: {                   
+        projeto: {
+            DiscoverCountry: {
+                title: 'DiscoverCountry',
+                text: 'Vzdělávací kvíz o vlajkách a hlavních městech zemí po celém světě.'
+            },
             Movierace: {    
                 title : 'MovieRace',
                 text : 'MovieRace je jednoduchá webová hra, ve které propojíte dva herce prostřednictvím filmů.'

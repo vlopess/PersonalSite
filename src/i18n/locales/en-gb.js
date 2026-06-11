@@ -38,7 +38,11 @@ export default {
                 title: 'Skills'
             }
         },
-        projeto: {         
+        projeto: {
+            DiscoverCountry: {
+                title: 'DiscoverCountry',
+                text: ' Educational quiz about flags and capitals of countries around the world. '
+            },
             Movierace: {    
                 title : 'MovieRace',
                 text : 'MovieRace is a simple web game where you connect two actors through movies.'

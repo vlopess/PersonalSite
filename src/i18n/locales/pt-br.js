@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto : {
+            DiscoverCountry: {
+                title: 'DiscoverCountry',
+                text: ' Quiz educativo de Bandeiras e Capitais de países do mundo. '
+            },
             Movierace: {    
                 title : 'MovieRace',
                 text : 'MovieRace é um jogo online simples onde você conecta dois atores através de filmes.'
