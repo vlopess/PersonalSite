@@ -151,6 +151,14 @@ export const Sliding = () => {
                     </button>
                     <button className="button-sliding">
                         <div className={"box"} style={{color: "black"}}>
+                            <img className="img" src="https://skillicons.dev/icons?i=ts"/>
+                            <div className="textBox">
+                                <p className="text head">Javascript</p>
+                            </div>
+                        </div>
+                    </button>
+                    <button className="button-sliding">
+                        <div className={"box"} style={{color: "black"}}>
                             <img className="img" src="https://skillicons.dev/icons?i=html"/>
                             <div className="textBox">
                                 <p className="text head">HTML</p>
@@ -421,6 +429,14 @@ export const Sliding = () => {
                     <button className="button-sliding">
                         <div className={"box"} style={{color: "black"}}>
                             <img className="img" src="https://skillicons.dev/icons?i=js"/>
+                            <div className="textBox">
+                                <p className="text head">Javascript</p>
+                            </div>
+                        </div>
+                    </button>
+                    <button className="button-sliding">
+                        <div className={"box"} style={{color: "black"}}>
+                            <img className="img" src="https://skillicons.dev/icons?i=ts"/>
                             <div className="textBox">
                                 <p className="text head">Javascript</p>
                             </div>

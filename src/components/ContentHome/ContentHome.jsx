@@ -192,7 +192,7 @@ export const ContentHome = () => {
                                     githubUrl={'https://github.com/vlopess/DiscoverCountry'}
                                     viewUrl={'https://discovercountry.netlify.app'}
                                     icons={['css', 'html', 'js', 'react', 'vite', 'express','jest', 'prisma']}
-                                    slideImgUrl={['']}
+                                    slideImgUrl={['https://github.com/vlopess/DiscoverCountry/blob/master/src/assets/logo.png?raw=true']}
                                 />
                                 <ProjectCard
                                     logoProject={'https://github.com/vlopess/MovieRace/blob/master/src/assets/icon.png?raw=true'}
@@ -354,7 +354,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
-                                    logoProject={'https://raw.githubusercontent.com/vlopess/VimTutorial/d79e8df64dc88a323584588649a325b50bda7e18/src/assets/vimlogo.svg'}
+                                    logoProject={'https://skillicons.dev/icons?i=vim'}
                                     cardRef={(el) => (cardRefs.current["VimTutorialID"] = el)}
                                     key={"VimTutorialID"}
                                     project={"VimTutorial"}
@@ -393,7 +393,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
-                                    logoProject={'https://github.com/vlopess/OlymFollow-FrontEnd/raw/refs/heads/main/olymfollow-front/public/favicon.ico'}
+                                    logoProject={'https://images2.imgbox.com/9f/33/iEktApxG_o.png'}
                                     cardRef={(el) => (cardRefs.current["OlympicsID"] = el)}
                                     key={"OlympicsID"}
                                     project={"Olympics"}
@@ -413,7 +413,7 @@ export const ContentHome = () => {
                                     ]}
                                 />
                                 <ProjectCard
-                                    logoProject={'https://github.com/vlopess/LeChat/blob/master/assets/logo.png?raw=true'}
+                                    logoProject={'https://images2.imgbox.com/6d/1b/sv2ZCKDM_o.png'}
                                     cardRef={(el) => (cardRefs.current["LeChatID"] = el)}
                                     key={"LeChatID"}
                                     project={"LeChat"}
@@ -426,7 +426,7 @@ export const ContentHome = () => {
                                     githubUrl={'https://github.com/vlopess/LeChat'}
                                     icons={['dart', 'flutter', 'firebase']}
                                     slideImgUrl={[
-                                        'https://github.com/user-attachments/assets/680ca804-9733-4555-9860-0f864e2f75e4',
+                                        'https://images2.imgbox.com/6d/1b/sv2ZCKDM_o.png',
                                         'https://github.com/user-attachments/assets/c4bbc72e-29bd-4030-8de9-f58734bca70e',
                                         'https://github.com/user-attachments/assets/2886ea94-2f6b-405f-92fa-142ff775c6e5',
                                         'https://github.com/user-attachments/assets/bd1d9950-fba5-4cb6-82ac-e6f508dc396d'

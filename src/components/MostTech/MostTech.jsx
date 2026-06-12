@@ -20,7 +20,7 @@ export const MostTech = () => {
                 <div style={{display: "flex", width: "100%", justifyContent: "space-between", alignContent: "center"}}>
                     <p>FrontEnd:</p>
                     <div className="skill-box">
-                        <span className="title">Javascript (React)</span>
+                        <span className="title">Typescript (React)</span>
                         <div className="skill-bar">
                       <span className="skill-per js">
                         <span className="tooltip">29%</span>
