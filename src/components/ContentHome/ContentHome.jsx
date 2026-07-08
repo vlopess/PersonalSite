@@ -179,6 +179,22 @@ export const ContentHome = () => {
                                 }}
                             >
                                 <ProjectCard
+                                    logoProject={'https://ph-files.imgix.net/43ccd2ca-790e-4ed4-8006-e892810021cd.png?auto=compress,format&codec=mozjpeg&cs=strip&dpr=2&fit=crop&frame=1&h=64&w=64'}
+                                    cardRef={(el) => (cardRefs.current["JaroslavaID"] = el)}
+                                    key={"JaroslavaID"}
+                                    project={"Jaroslava"}
+                                    tags={['Web Application', 'Dev Tool']}
+                                    thumbnailColor={'#00E054'}
+                                    expanded={expandedId === "JaroslavaID"}
+                                    hidden={expandedId !== null && expandedId !== "JaroslavaID"}
+                                    onExpand={() => setExpandedId("JaroslavaID")}
+                                    onClose={() => setExpandedId(null)}
+                                    githubUrl={'https://github.com/vlopess/Jaroslava.sdk'}
+                                    viewUrl={'https://jaroslava.app/'}
+                                    icons={['css', 'html', 'js', 'ts']}
+                                    slideImgUrl={['https://ph-files.imgix.net/18542582-e935-4c48-974e-7bb819a6c655.png?auto=compress,format&codec=mozjpeg&cs=strip&dpr=2&fit=max&frame=1&h=320&w=612', "https://ph-files.imgix.net/43686ae4-e774-4755-b4a6-7d7becfdda35.png?auto=compress,format&codec=mozjpeg&cs=strip&dpr=2&fit=max&frame=1&h=320&w=611", "https://ph-files.imgix.net/605d4a30-735f-4670-a48f-f8345c2d33a0.png?auto=compress,format&codec=mozjpeg&cs=strip&dpr=2&fit=max&frame=1&h=320&w=611"]}
+                                />
+                                <ProjectCard
                                     logoProject={'https://github.com/vlopess/DiscoverCountry/blob/master/src/assets/logo.png?raw=true'}
                                     cardRef={(el) => (cardRefs.current["DiscoverCountryID"] = el)}
                                     key={"DiscoverCountryID"}
