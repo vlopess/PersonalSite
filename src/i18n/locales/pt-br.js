@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto : {
+            Jaroslava: {
+              title: 'Jaroslava',
+              text: 'Jaroslava é uma plataforma para criação, gerenciamento e publicação de sites por meio de uma linguagem de marcação proprietária chamada Jaroslava, uma linguagem de marcação simples para construção de sites. A plataforma permite que os usuários criem landing pages, blogs, newsletters, hubs de links, portfólios e outros tipos de sites sem lidar com processos de codificação, infraestrutura, hospedagem ou implantação.'
+            },
             DiscoverCountry: {
                 title: 'DiscoverCountry',
                 text: ' Quiz educativo de Bandeiras e Capitais de países do mundo. '
