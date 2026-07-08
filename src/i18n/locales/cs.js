@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto: {
+            Jaroslava: {
+              title: 'Jaroslava',
+              text: 'Jaroslava je platforma pro tvorbu, správu a publikování webových stránek pomocí proprietárního značkovacího jazyka s názvem Jaroslava, což je jednoduchý značkovací jazyk pro tvorbu webových stránek. Platforma umožňuje uživatelům vytvářet vstupní stránky, blogy, newslettery, link huby, portfolia a další typy webových stránek bez nutnosti zabývat se kódováním, infrastrukturou, hostingem nebo nasazením.'
+            },
             DiscoverCountry: {
                 title: 'DiscoverCountry',
                 text: 'Vzdělávací kvíz o vlajkách a hlavních městech zemí po celém světě.'
