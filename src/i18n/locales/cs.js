@@ -114,6 +114,14 @@ export default {
             projetos: 'Projekty',
             contato: 'Kontakt'
         },
+        service: {
+            title: 'Když mám volný čas, rád využívám své technické dovednosti k pomoci těm, kdo to potřebují: neziskovým organizacím, sociálním projektům nebo malým podnikům, které nemají rozpočet na technologie.',
+            item1: '✓ Weby a vstupní stránky',
+            item2: '✓ Jednoduché webové systémy (registrace, dashboardy)',
+            item3: '✓ Automatizace manuálních procesů',
+            item4: '✓ Jednorázové technické poradenství',
+            button: 'Chci mluvit o svém projektu'
+        },
         button: {
             github: 'Zobrazit na Githubu',
             web: 'Zobrazit na Webu'
