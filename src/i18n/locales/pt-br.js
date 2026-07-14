@@ -114,6 +114,14 @@ export default {
             projetos : 'Projetos',
             contato : 'Contato'
         },
+        service: {
+            title: 'Quando estou com tempo livre gosto de usar minhas habilidades técnicas  pra ajudar quem precisa: ONGs, projetos sociais ou pequenos negócios que não têm orçamento pra tecnologia.',
+            item1: '✓ Sites e landing pages',
+            item2: '✓ Sistemas web simples (cadastro, dashboards)',
+            item3: '✓ Automação de processos manuais',
+            item4: '✓ Consultoria técnica pontual',
+            button: 'Quero conversar sobre meu projeto'
+        },
         button : {
             github : 'Ver no Github',
             web : 'Ver na Web'
