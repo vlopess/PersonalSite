@@ -114,6 +114,14 @@ export default {
             projetos: 'Projects',
             contato: 'Contact'
         },
+        service: {
+            title: 'When I have free time, I like to use my technical skills to help those in need: NGOs, social projects, or small businesses that don\'t have a budget for technology.',
+            item1: '✓ Websites and landing pages',
+            item2: '✓ Simple web systems (registration, dashboards)',
+            item3: '✓ Automation of manual processes',
+            item4: '✓ One-off technical consulting',
+            button: 'I want to talk about my project'
+        },
         button: {
             github: 'View on Github',
             web: 'View on Web'
