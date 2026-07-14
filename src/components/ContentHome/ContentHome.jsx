@@ -15,6 +15,8 @@ import Me from "../../assets/png/me.png";
 import {ProjectCard} from "../ProjectCard/ProjectCard.jsx";
 import Loop from "@/components/Loop.jsx";
 import axios from "axios";
+import { Services } from "../Services/Services.jsx";
+
 
 export const ContentHome = () => {
     const [expandedId, setExpandedId] = useState(null);
@@ -488,6 +490,7 @@ export const ContentHome = () => {
                                 />
                             </div>
                         </div>
+                        <Services/>
                         <Divider text={<Translator path="divider.contato"/>}/>
                         <Card id={"content-contacts"} height={100}>
                             <ContatosList/>
