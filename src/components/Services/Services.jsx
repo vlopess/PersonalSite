@@ -12,7 +12,6 @@ export const Services = () => {
             </div>
 
             <div class="card-servico">
-                <div class="card-header">🎯 Desenvolvimento gratuito para causas sociais</div>
                 <div class="card-body">
                     <Translator path={`service.title`} />
                 <ul class="lista-servicos">
