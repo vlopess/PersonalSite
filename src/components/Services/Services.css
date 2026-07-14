@@ -1,0 +1,53 @@
+.secao-servicos { margin: 60px 0; }
+
+.titulo-secao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.titulo-secao .linha {
+  flex: 1;
+  height: 1px;
+  background: #2a3050;
+}
+.titulo-secao h2 {
+  color: #7fd1e0;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card-servico {
+  background: #131727;
+  border: 1px solid #2a3050;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.card-header {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.card-body p { color: #b8bcd4; line-height: 1.6; margin-bottom: 16px; }
+
+.lista-servicos { list-style: none; padding: 0; margin-bottom: 20px; }
+.lista-servicos li { color: #d8dae8; margin-bottom: 6px; }
+
+.btn-cta {
+  display: inline-block;
+  background: #2ecc71;
+  color: #0c0f1a;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn-cta:hover { opacity: 0.85; }
