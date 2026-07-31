@@ -1,12 +1,14 @@
-import {Container} from "react-bootstrap";
+import { Heart } from "@phosphor-icons/react"
+import "./Footer.css"
 
 export const Footer = () => {
     return (
-        <>
-            <footer style={{backgroundColor: `black`}}>
-                <Container fluid style={{padding: "15px", height: "50px"}}>
-                </Container>
-            </footer>
-        </>
+        <footer className="site-footer">
+            <div className="footer-inner">
+                <span className="footer-text">
+                    &copy; {new Date().getFullYear()} Victor Lopes
+                </span>
+            </div>
+        </footer>
     )
 }

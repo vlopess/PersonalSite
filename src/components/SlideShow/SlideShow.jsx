@@ -1,61 +1,51 @@
-import "./SlideShow.css";
-import {useEffect, useState} from "react";
+import { useState, useCallback } from "react"
+import { CaretLeft, CaretRight } from "@phosphor-icons/react"
+import "./SlideShow.css"
 
-export const SlideShow = ({id, children}) => {
+export const SlideShow = ({ children }) => {
+    const slides = Array.isArray(children) ? children : [children]
+    const [current, setCurrent] = useState(0)
 
-    const [slideIndex, setSlideIndex] = useState(1);
-    const [slideLength, setSlideLength] = useState(0);
+    const prev = useCallback(() => {
+        setCurrent((c) => (c === 0 ? slides.length - 1 : c - 1))
+    }, [slides.length])
 
+    const next = useCallback(() => {
+        setCurrent((c) => (c === slides.length - 1 ? 0 : c + 1))
+    }, [slides.length])
 
-    const showSlides = (n) => {
-        let i;
-        let slides = document.getElementsByClassName(id);
-
-        setSlideLength(slides.length);
-
-        if (n > slides.length) {
-            setSlideIndex(1);
-        }
-
-        if (n < 1) {
-            setSlideIndex(slides.length);
-        }
-
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-
-        if((slideIndex - 1) < slides.length)
-        {
-            slides[slideIndex-1].style.display = "flex";
-            slides[slideIndex-1].style.justifyContent = "center";
-        }
-        else
-        {
-            slides[0].style.display = "flex";
-            slides[0].style.justifyContent = "center";
-            setSlideIndex(1);
-        }
-    }
-
-    useEffect(() => {
-        showSlides(1);
-    }, [showSlides]);
-
-    const plusSlides = (n) => {
-        setSlideIndex(slideIndex + n);
-        showSlides(slideIndex);
-    }
-
-
+    if (slides.length === 0) return null
 
     return (
-        <>
-            <div className="slideshow-container">
-                {children}
-                {slideIndex !== 1 &&(<a className="prev" onClick={() => plusSlides(-1)}>❮</a>)}
-                {slideLength !== slideIndex && (<a className="next" onClick={() => plusSlides(1)}>❯</a>)}
+        <div className="slideshow">
+            <div className="slides-track">
+                {slides.map((slide, i) => (
+                    <div key={i} className={`slide-item${i === current ? " slide-item--active" : ""}`}>
+                        {slide}
+                    </div>
+                ))}
             </div>
-        </>
+
+            {slides.length > 1 && (
+                <>
+                    <button className="slideshow-btn slideshow-btn--prev" onClick={prev} aria-label="Previous slide">
+                        <CaretLeft size={18} weight="bold" />
+                    </button>
+                    <button className="slideshow-btn slideshow-btn--next" onClick={next} aria-label="Next slide">
+                        <CaretRight size={18} weight="bold" />
+                    </button>
+                    <div className="slideshow-dots">
+                        {slides.map((_, i) => (
+                            <button
+                                key={i}
+                                className={`slideshow-dot${i === current ? " slideshow-dot--active" : ""}`}
+                                onClick={() => setCurrent(i)}
+                                aria-label={`Go to slide ${i + 1}`}
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
+        </div>
     )
 }

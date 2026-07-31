@@ -1,20 +1,15 @@
 import "./Card.css"
 
-export const Card = ({id, children, height = 250, width = "100%"}) => {
+export const Card = ({id, children, height = 280}) => {
     return (
-        <>
-            <div
-                id={id}
-                className="card-container"
-                style={{
-                    height: height + "px",
-                    width: width
-                }}>
-
-                <div className="container">
-                    {children}
-                </div>
+        <div
+            id={id}
+            className="card"
+            style={{ '--card-min-height': height + 'px' }}
+        >
+            <div className="card-inner">
+                {children}
             </div>
-        </>
+        </div>
     )
 }

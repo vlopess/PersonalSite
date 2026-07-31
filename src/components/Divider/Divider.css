@@ -1,16 +1,23 @@
-.divider{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: var(--space-4);
+  margin: var(--space-12) 0;
 }
 
-.divider span{
-    width: 25%;
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
 }
 
-.divider hr {
-    height: 1px;
-    background-color: #9f9f9f;
-    width: 42%;
+.divider-text {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }

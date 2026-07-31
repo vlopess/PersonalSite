@@ -1,14 +1,99 @@
-a{
-    color: #1677ff;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-a:hover{
-    text-decoration: #1677ff;
-}
-
 .article-item {
-    padding: 10px 0;
-    display: flex;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  text-align: start;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+  margin: 0 calc(-1 * var(--space-3));
+}
+
+.article-item:hover {
+  background: var(--color-accent-subtle);
+}
+
+.article-item svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.article-link {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.article-item:hover .article-link {
+  color: var(--color-accent);
+}
+
+.article-item--more {
+  margin-top: var(--space-1);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-3);
+  border-radius: 0;
+}
+
+.article-item--more:hover {
+  background: transparent;
+}
+
+.article-item--more .article-link {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Featured article */
+.article-featured {
+  display: block;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  margin-bottom: var(--space-3);
+}
+
+.article-featured:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.article-featured-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--color-surface-hover);
+}
+
+.article-featured-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.article-featured:hover .article-featured-img img {
+  transform: scale(1.03);
+}
+
+.article-featured-title {
+  font-size: 13px;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  padding: var(--space-2) var(--space-3);
+  margin: 0;
+}
+
+.article-featured:hover .article-featured-title {
+  color: var(--color-accent);
 }

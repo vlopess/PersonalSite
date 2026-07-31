@@ -1,16 +1,10 @@
 import "./NavBarButton.css"
 
-
-export const NavBarButton = ({img, title, children, onTap}) => {
+export const NavBarButton = ({ icon: Icon, title, onTap }) => {
     return (
-        <>
-            <div className="button-container">
-                <button className="button-navbar" onClick={onTap}>
-                    {img && (<img src={img} alt=""/>)}
-                    {!img && (children)}
-                    <p className={"descricao"}>{title}</p>
-                </button>
-            </div>
-        </>
+        <button className="navbar-btn" onClick={onTap} aria-label={title}>
+            {Icon && <Icon size={18} weight="duotone" />}
+            <span className="navbar-btn-label">{title}</span>
+        </button>
     )
 }

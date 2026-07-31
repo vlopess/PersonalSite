@@ -1,0 +1,27 @@
+.site-footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-6) var(--space-4);
+  margin-top: var(--space-12);
+}
+
+.footer-inner {
+  margin: 0 auto;
+}
+
+.footer-text {
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+}
+
+.footer-heart {
+  color: var(--color-accent);
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

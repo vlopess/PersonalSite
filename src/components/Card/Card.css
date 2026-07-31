@@ -1,26 +1,25 @@
-.card-container{
-    background-color: #1c1e2e;
-    margin: 25px 0;
-    width: fit-content;
-    border-radius: 0.75em;
-    transition: ease 0.2s;
-    box-shadow: 1em 1em 1em #1a1a1a, -0.75em -0.75em 1em #1a1a1a;
-    border: 2px solid #1a1a1a;
-    position: relative;
-    overflow: hidden auto;
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden auto;
+  --card-min-height: 250px;
+  min-height: var(--card-min-height);
+  padding: 25px;
+  margin-bottom: 25px;
 }
 
-.card-container p {
-    color: grey;
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-md);
 }
 
-.card-container:hover {
-    border: 2px solid #1677ff;
-}
-
-.container {
-    margin: 0 1.25em;
-    display: flex;
-    flex-direction: row;
-    gap: 0.75em;
+.card-inner {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-4);
+  height: 100%;
 }

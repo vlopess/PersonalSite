@@ -1,15 +1,12 @@
-import "../SlideShow.css";
-
-export const SlideItem = ({id, imgUrl, videoUrl}) => {
+export const SlideItem = ({imgUrl, videoUrl}) => {
     return (
         <>
-            <div className={"mySlides fade " + id} style={{'height':'100%'}}>
-                <img src={imgUrl} alt=""/>
-                {videoUrl && (<video width="400" height="300" controls>
+            <img src={imgUrl} alt="" loading="lazy" />
+            {videoUrl && (
+                <video width="100%" height="100%" controls>
                     <source src={videoUrl} type="video/mp4"/>
-                    Your browser does not support HTML video.
-                </video>)}
-            </div>
+                </video>
+            )}
         </>
     )
 }

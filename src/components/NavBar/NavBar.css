@@ -1,9 +1,31 @@
-.navbar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #1c1e2e;
-    z-index: 100;
-    display: flex;
-    justify-content: end;
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(28, 30, 46, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 50;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
+  max-width: 1000px;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+  }
+  .navbar-inner {
+    justify-content: center;
+  }
 }
