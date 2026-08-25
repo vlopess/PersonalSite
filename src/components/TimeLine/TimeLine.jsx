@@ -5,6 +5,13 @@ import "./TimeLine.css";
 
 const MILESTONES = [
   {
+    type: "work",
+    title: "Desenvolvedor",
+    company: "Open System Tecnologia",
+    date: "Setembro 2026",
+    icon: Briefcase,
+  },
+  {
     type: "college",
     title: "Análise e Desenvolvimento de Sistemas",
     company: "IFBA",
