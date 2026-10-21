@@ -25,11 +25,8 @@ export const ContentHome = () => {
 
     useEffect(() => {
         const loadPosts = async () => {
-            const feedUrl = encodeURIComponent(
-                "https://medium.com/feed/@Victorldev"
-            );
             const response = await axios.get(
-                `https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`
+                `https://www.toptal.com/developers/feed2json/convert?url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40Victorldev&minify=on`
             );
             setPosts(response.data.items);
         };
