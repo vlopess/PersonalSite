@@ -25,10 +25,9 @@ export const ContentHome = () => {
 
     useEffect(() => {
         const loadPosts = async () => {
-            const response = await axios.get(
-                `https://www.toptal.com/developers/feed2json/convert?url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40Victorldev&minify=on`
-            );
-            setPosts(response.data.items);
+            const response = await fetch("/api/medium");
+            const data = await response.json();
+            setPosts(data.items);
         };
         loadPosts();
     }, []);
