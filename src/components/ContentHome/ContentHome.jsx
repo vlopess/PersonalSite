@@ -114,6 +114,21 @@ export const ContentHome = () => {
                     <div className="projects-scroll">
                         <div className="projects-grid">
                             <ProjectCard
+                                logoProject={'https://ph-files.imgix.net/a4cd1ec1-2cdf-47ff-b130-9e3803c7547e.svg?auto=compress,format&codec=mozjpeg&cs=strip&dpr=1&fit=crop&frame=1&h=64&w=64'}
+                                cardRef={(el) => (cardRefs.current["AsAStampID"] = el)}
+                                key={"AsAStampID"}
+                                project={"AsAStamp"}
+                                tags={['Web Application', 'Design Tools', 'Photo editing']}
+                                thumbnailColor={'#00E054'}
+                                expanded={expandedId === "AsAStampID"}
+                                hidden={expandedId !== null && expandedId !== "AsAStampID"}
+                                onExpand={() => setExpandedId("AsAStampID")}
+                                onClose={() => setExpandedId(null)}
+                                viewUrl={'https://asastamp.netlify.app/'}
+                                icons={['css', 'html', 'js', 'ts', 'supabase', 'vite', 'react', 'netlify']}
+                                slideImgUrl={['https://ph-files.imgix.net/3d9dd89b-85c4-4919-bf9e-b28287222472.png?auto=compress,format&codec=mozjpeg&cs=strip&dpr=1&fit=max&frame=1&h=220&w=409', "https://ph-files.imgix.net/f7f74499-eb87-4d1d-888e-b0d03978b522.png?auto=compress,format&codec=mozjpeg&cs=strip&dpr=1&fit=max&frame=1&h=220&w=175"]}
+                            />
+                            <ProjectCard
                                 logoProject={'https://ph-files.imgix.net/43ccd2ca-790e-4ed4-8006-e892810021cd.png?auto=compress,format&codec=mozjpeg&cs=strip&dpr=2&fit=crop&frame=1&h=64&w=64'}
                                 cardRef={(el) => (cardRefs.current["JaroslavaID"] = el)}
                                 key={"JaroslavaID"}

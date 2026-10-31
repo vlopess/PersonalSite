@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto: {
+            AsAStamp: {
+                title: 'As a stamp',
+                text: 'Collect moments, not likes. Turn your photos into digital stamps. Keep fragments of special moments, create collections, and give your memories a place to stay.'
+            },
             Jaroslava: {
               title: 'Jaroslava',
               text: 'Jaroslava is a platform for creating, managing and publishing websites through a proprietary markup language called Jaroslava, a simple markup language for building websites. The platform allows users to build landing pages, blogs, newsletters, link hubs, portfolios and other types of websites without dealing with coding, infrastructure, hosting or deployment processes.'

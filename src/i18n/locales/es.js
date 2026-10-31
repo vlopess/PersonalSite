@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto: {
+            AsAStamp: {
+                title: 'As a stamp',
+                text: 'Colecciona momentos, no "me gusta". Convierte tus fotos en sellos digitales. Guarda fragmentos de momentos especiales, crea colecciones y dale a tus recuerdos un lugar donde quedarse.'
+            },
             Jaroslava: {
               title: 'Jaroslava',
               text: 'Jaroslava es una plataforma para crear, gestionar y publicar sitios web mediante un lenguaje de marcado propio llamado Jaroslava, un lenguaje sencillo diseñado para la construcción de sitios web. La plataforma permite a los usuarios crear páginas de aterrizaje, blogs, boletines, centros de enlaces, portafolios y otros tipos de sitios web sin tener que lidiar con la programación, la infraestructura, el alojamiento o los procesos de despliegue.'

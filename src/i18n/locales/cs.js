@@ -39,6 +39,10 @@ export default {
             }
         },
         projeto: {
+            AsAStamp: {
+                title: 'As a stamp',
+                text: 'Sbírejte okamžiky, ne lajky. Přetvořte své fotografie na digitální známky. Uchovejte fragmenty zvláštních okamžiků, vytvářejte sbírky a dejte svým vzpomínkám místo, kde mohou zůstat.'
+            },
             Jaroslava: {
               title: 'Jaroslava',
               text: 'Jaroslava je platforma pro tvorbu, správu a publikování webových stránek pomocí proprietárního značkovacího jazyka s názvem Jaroslava, což je jednoduchý značkovací jazyk pro tvorbu webových stránek. Platforma umožňuje uživatelům vytvářet vstupní stránky, blogy, newslettery, link huby, portfolia a další typy webových stránek bez nutnosti zabývat se kódováním, infrastrukturou, hostingem nebo nasazením.'
