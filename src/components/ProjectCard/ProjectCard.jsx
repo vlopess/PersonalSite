@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next"
 import "./ProjectCard.css";
 import Translator from "../../i18n/Translator.js";
 import { ButtonGithub } from "../Button/ButtonGithub.jsx";
@@ -20,6 +21,9 @@ export const ProjectCard = ({
     cardRef,
     logoProject
 }) => {
+    const { t } = useTranslation();
+    const translatedTags = tags.map((tag) => t(`projectTags.${tag}`, tag));
+
     if (hidden) return null;
 
     if (expanded) {
@@ -40,7 +44,7 @@ export const ProjectCard = ({
                     <button
                         className="project-card__close"
                         onClick={(e) => { e.stopPropagation(); onClose(); }}
-                        aria-label="Close project details"
+                        aria-label={t("projectDetails.close", "Close project details")}
                     >
                         <X size={16} weight="bold" />
                     </button>
@@ -59,15 +63,15 @@ export const ProjectCard = ({
                     </p>
 
                     <div className="project-card__exp-tags">
-                        {tags.map((t) => (
-                            <span key={t} className="project-card__tag">{t}</span>
+                        {translatedTags.map((tag) => (
+                            <span key={tag} className="project-card__tag">{tag}</span>
                         ))}
                     </div>
 
                     <hr className="project-card__divider" />
 
                     <div className="project-card__detail-row">
-                        <span className="project-card__detail-label">Technologies</span>
+                        <span className="project-card__detail-label">{t("projectDetails.technologies", "Technologies")}</span>
                         <div className="project-card__detail-value">
                             {icons.map((i) => (
                                 <div key={i} className="project-card__tech-chip" title={i}>
@@ -79,7 +83,7 @@ export const ProjectCard = ({
 
                     {viewUrl && (
                         <div className="project-card__detail-row">
-                            <span className="project-card__detail-label">View project</span>
+                            <span className="project-card__detail-label">{t("projectDetails.view", "View project")}</span>
                             <div className="project-card__detail-value">
                                 <ButtonWeb url={viewUrl} />
                             </div>
@@ -88,7 +92,7 @@ export const ProjectCard = ({
 
                     {githubUrl && (
                         <div className="project-card__detail-row">
-                            <span className="project-card__detail-label">Source code</span>
+                            <span className="project-card__detail-label">{t("projectDetails.source", "Source code")}</span>
                             <div className="project-card__detail-value">
                                 <ButtonGithub url={githubUrl} />
                             </div>
@@ -107,7 +111,7 @@ export const ProjectCard = ({
             role="button"
             tabIndex={0}
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onExpand(); }}
-            aria-label={`View project details for ${project}`}
+            aria-label={t("projectDetails.open", { defaultValue: "View project details for {{project}}", project: t(`projeto.${project}.title`) })}
         >
             <div className="project-card__thumb">
                 <img src={logoProject} alt="" />
@@ -117,7 +121,7 @@ export const ProjectCard = ({
                     <Translator path={`projeto.${project}.title`} />
                 </span>
                 <span className="project-card__tags-line">
-                    {tags.join(" \u00B7 ")}
+                    {translatedTags.join(" \u00B7 ")}
                 </span>
             </div>
         </div>

@@ -5,13 +5,15 @@ export default {
             home: 'Domů',
             aboutMe: 'O Mně',
             projects: 'Projekty',
+            services: 'Služby',
             contact: 'Kontakt',
             burguer: {
                 descricao: 'Možnosti',
                 pt: 'Portugalština',
                 en: 'Angličtina',
                 es: 'Španělština',
-                cs: 'Čeština'
+                cs: 'Čeština',
+                fr: 'Francouzština'
             }
         },
         home: {

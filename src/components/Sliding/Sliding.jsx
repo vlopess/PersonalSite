@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next"
 import "./Sliding.css";
 
 const TECH_ITEMS = [
@@ -39,6 +40,7 @@ const TECH_ITEMS = [
 ]
 
 export const Sliding = () => {
+    const { t } = useTranslation()
     const items = TECH_ITEMS.map((t, i) => (
         <span className="tech-marquee-item" key={`${t.label}-${i}`}>
             <img src={t.src} alt="" loading="lazy" />
@@ -47,7 +49,7 @@ export const Sliding = () => {
     ))
 
     return (
-        <div className="tech-marquee-wrapper" aria-label="Technologies">
+        <div className="tech-marquee-wrapper" aria-label={t("projectDetails.technologies", "Technologies")}>
             {items}
         </div>
     )

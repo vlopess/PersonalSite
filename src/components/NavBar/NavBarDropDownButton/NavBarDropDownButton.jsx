@@ -5,6 +5,7 @@ import Translator from "../../../i18n/Translator.js"
 import { Translate } from "@phosphor-icons/react"
 
 const FLAGS = {
+    fr: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 24'%3E%3Crect width='36' height='24' fill='%23fff'/%3E%3Crect width='12' height='24' fill='%23002395'/%3E%3Crect x='24' width='12' height='24' fill='%23ED2939'/%3E%3C/svg%3E",
     "pt-BR": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 24'%3E%3Crect width='36' height='24' fill='%23009940'/%3E%3Cpolygon points='18,2 34,12 18,22 2,12' fill='%23FFCC00'/%3E%3Ccircle cx='18' cy='12' r='6' fill='%23302681'/%3E%3C/svg%3E",
     "en-US": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 24'%3E%3Crect width='36' height='24' fill='%23012169'/%3E%3Crect y='10' width='36' height='4' fill='%23fff'/%3E%3Crect x='16' width='4' height='24' fill='%23fff'/%3E%3C/svg%3E",
     es: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 24'%3E%3Crect width='36' height='24' fill='%23AD1519'/%3E%3Crect y='8' width='36' height='8' fill='%23FABD00'/%3E%3C/svg%3E",
@@ -16,10 +17,11 @@ const LANGUAGES = [
     { code: "en-US", key: "navbar.burguer.en" },
     { code: "es", key: "navbar.burguer.es" },
     { code: "cs", key: "navbar.burguer.cs" },
+    { code: "fr", key: "navbar.burguer.fr" },
 ]
 
 export const NavBarDropDownButton = () => {
-    const { i18n } = useTranslation()
+    const { t, i18n } = useTranslation()
     const [open, setOpen] = useState(false)
     const ref = useRef(null)
 
@@ -43,7 +45,7 @@ export const NavBarDropDownButton = () => {
             <button
                 className="lang-trigger"
                 onClick={() => setOpen(!open)}
-                aria-label="Change language"
+                aria-label={t("navbar.changeLanguage", "Change language")}
                 aria-expanded={open}
             >
                 <Translate size={18} weight="duotone" />
@@ -55,7 +57,7 @@ export const NavBarDropDownButton = () => {
                 {LANGUAGES.map(({ code, key }) => (
                     <button
                         key={code}
-                        className={`lang-option${i18n.language === code ? " lang-option--active" : ""}`}
+                        className={`lang-option${i18n.resolvedLanguage === code ? " lang-option--active" : ""}`}
                         onClick={() => handleChangeLanguage(code)}
                         role="menuitem"
                     >

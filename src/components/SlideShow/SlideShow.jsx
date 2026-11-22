@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next"
 import { useState, useCallback } from "react"
 import { CaretLeft, CaretRight } from "@phosphor-icons/react"
 import "./SlideShow.css"
 
 export const SlideShow = ({ children }) => {
+    const { t } = useTranslation()
     const slides = Array.isArray(children) ? children : [children]
     const [current, setCurrent] = useState(0)
 
@@ -28,10 +30,10 @@ export const SlideShow = ({ children }) => {
 
             {slides.length > 1 && (
                 <>
-                    <button className="slideshow-btn slideshow-btn--prev" onClick={prev} aria-label="Previous slide">
+                    <button className="slideshow-btn slideshow-btn--prev" onClick={prev} aria-label={t("slideshow.previous", "Previous slide")}>
                         <CaretLeft size={18} weight="bold" />
                     </button>
-                    <button className="slideshow-btn slideshow-btn--next" onClick={next} aria-label="Next slide">
+                    <button className="slideshow-btn slideshow-btn--next" onClick={next} aria-label={t("slideshow.next", "Next slide")}>
                         <CaretRight size={18} weight="bold" />
                     </button>
                     <div className="slideshow-dots">
@@ -40,7 +42,7 @@ export const SlideShow = ({ children }) => {
                                 key={i}
                                 className={`slideshow-dot${i === current ? " slideshow-dot--active" : ""}`}
                                 onClick={() => setCurrent(i)}
-                                aria-label={`Go to slide ${i + 1}`}
+                                aria-label={t("slideshow.goTo", { defaultValue: "Go to slide {{number}}", number: i + 1 })}
                             />
                         ))}
                     </div>

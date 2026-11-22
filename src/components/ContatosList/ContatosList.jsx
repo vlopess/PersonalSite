@@ -1,15 +1,17 @@
+import { useTranslation } from "react-i18next"
 import "./ContatosList.css"
 import img from "../../assets/png/kristine.png";
 import { Envelope, MediumLogo, LinkedinLogo, GithubLogo, Code, GlobeIcon } from "@phosphor-icons/react"
 
 export const ContatosList = () => {
+    const { t } = useTranslation()
     return (
         <div className="contact-links">
             <a href="mailto:victorlopes9291@gmail.com"
                target="_blank"
                rel="noopener noreferrer"
                className="contact-link"
-               aria-label="Email"
+               aria-label={t("contact.email", "Email")}
             >
                 <Envelope size={22} weight="duotone" />
             </a>
@@ -55,7 +57,7 @@ export const ContatosList = () => {
                className="contact-link"
                aria-label="Kristnotes"
             >
-                <img className="socialImg" width="40" height="40" alt="Minimalist_Purple_Woman_Icon-removebg-preview" src={img}/>
+                <img className="socialImg" width="40" height="40" alt="" src={img}/>
             </a>
         </div>
     )

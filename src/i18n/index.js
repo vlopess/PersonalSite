@@ -22,4 +22,12 @@ i18n
     .use(initReactI18next) // Usa o pacote do i18n específico para React
     .init(i18nConfig) // Usa nossas configurações
 
+function updateDocumentLanguage() {
+    document.documentElement.lang = i18n.resolvedLanguage || i18nConfig.fallbackLng
+    document.title = i18n.t('pageTitle', 'Victor Personal Site')
+}
+
+i18n.on('languageChanged', updateDocumentLanguage)
+if (i18n.isInitialized) updateDocumentLanguage()
+
 export default i18n
