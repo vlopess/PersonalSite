@@ -26,12 +26,28 @@ export const ContentHome = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
+        const controller = new AbortController();
+
         const loadPosts = async () => {
-            const response = await fetch("/api/medium");
-            const data = await response.json();
-            setPosts(data.items);
+            try {
+                const response = await fetch("/api/medium", { signal: controller.signal });
+                if (!response.ok) throw new Error(`Medium feed returned HTTP ${response.status}`);
+
+                const { items } = await response.json();
+                if (!Array.isArray(items)) throw new Error("Medium feed has no items array");
+
+                setPosts(items.filter((item) =>
+                    typeof item?.title === "string" &&
+                    typeof item.url === "string" &&
+                    /^https?:\/\//i.test(item.url)
+                ));
+            } catch (error) {
+                if (!controller.signal.aborted) console.warn("Could not load Medium articles:", error);
+            }
         };
+
         loadPosts();
+        return () => controller.abort();
     }, []);
 
     useEffect(() => {
@@ -79,10 +95,10 @@ export const ContentHome = () => {
                                 <h2 className="card-title"><Translator path="aboutMe.article.title"/></h2>
                                 <div className="medium-posts">
                                     {posts.length > 0 && (
-                                        <Article featured={true} thumbnail={posts[0].thumbnail} text={posts[0].title} link={posts[0].link}/>
+                                        <Article featured={true} thumbnail={posts[0].image} text={posts[0].title} link={posts[0].url}/>
                                     )}
                                     {posts.slice(1, 4).map((post) => (
-                                        <Article key={post.link} text={post.title} link={post.link}/>
+                                        <Article key={post.url} text={post.title} link={post.url}/>
                                     ))}
                                     <Article icon={ArrowRight} more text={<Translator path="aboutMe.article.more"/>} link={"https://medium.com/@Victorldev"}/>
                                 </div>
