@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react"
+import { Pause, Play } from "@phosphor-icons/react"
 import { useTranslation } from "react-i18next"
 import "./Sliding.css";
 
@@ -41,16 +43,47 @@ const TECH_ITEMS = [
 
 export const Sliding = () => {
     const { t } = useTranslation()
-    const items = TECH_ITEMS.map((t, i) => (
-        <span className="tech-marquee-item" key={`${t.label}-${i}`}>
-            <img src={t.src} alt="" loading="lazy" />
-            <span className="tech-marquee-label">{t.label}</span>
-        </span>
-    ))
+    const [reducedMotion, setReducedMotion] = useState(
+        () => window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+    const [playback, setPlayback] = useState(null)
+    const playing = playback ?? !reducedMotion
+
+    useEffect(() => {
+        const preference = window.matchMedia("(prefers-reduced-motion: reduce)")
+        const updatePreference = (event) => setReducedMotion(event.matches)
+
+        preference.addEventListener("change", updatePreference)
+        return () => preference.removeEventListener("change", updatePreference)
+    }, [])
+
+    const playbackLabel = t(playing ? "carousel.pause" : "carousel.play")
 
     return (
-        <div className="tech-marquee-wrapper" aria-label={t("projectDetails.technologies", "Technologies")}>
-            {items}
+        <div className="tech-marquee-wrapper" role="region" aria-label={t("divider.tech")}>
+            <div className="tech-marquee-viewport" data-playing={playing} tabIndex={playing ? undefined : 0}>
+                <div className="tech-marquee-track">
+                    {[false, true].map((duplicate) => (
+                        <div className="tech-marquee-group" key={String(duplicate)} aria-hidden={duplicate || undefined}>
+                            {TECH_ITEMS.map(({ src, label }) => (
+                                <span className="tech-marquee-item" key={label}>
+                                    <img src={src} alt="" loading="lazy" />
+                                    <span className="tech-marquee-label">{label}</span>
+                                </span>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <button
+                type="button"
+                className="tech-marquee-toggle"
+                onClick={() => setPlayback(!playing)}
+                aria-label={playbackLabel}
+                title={playbackLabel}
+            >
+                {playing ? <Pause size={16} weight="fill" aria-hidden="true" /> : <Play size={16} weight="fill" aria-hidden="true" />}
+            </button>
         </div>
     )
 }

@@ -1,5 +1,9 @@
 export default {
     translations: {
+        carousel: {
+            play: 'Lancer le carrousel',
+            pause: 'Mettre le carrousel en pause'
+        },
         navbar: {
             idioma: 'Langue',
             home: 'Accueil',
